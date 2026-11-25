@@ -239,7 +239,7 @@ function ArchitecturalWindowAssembly({ blindTilt, lightMode }) {
         <meshStandardMaterial color="#B89656" metalness={0.85} roughness={0.18} />
       </mesh>
 
-      {/* 7. Canadian Oak Engineered Hardwood Floor */}
+              {/* 7. Warm Teak Engineered Hardwood Floor */}
       <mesh position={[0, -1.62, 0.6]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <planeGeometry args={[8, 3.5]} />
         <meshPhysicalMaterial
@@ -254,7 +254,7 @@ function ArchitecturalWindowAssembly({ blindTilt, lightMode }) {
   );
 }
 
-// Outdoor Canadian Garden Landscape Backdrop
+// Outdoor Bangalore Garden Landscape Backdrop
 function OutdoorLandscapeBackdrop({ lightMode }) {
   return (
     <group position={[0, 0, -2.5]}>
@@ -314,8 +314,8 @@ const WindowCurtainShowcase = () => {
                   <Layers size={16} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-[#2B1F17] font-medium text-sm">Custom Drapery &amp; Motorized Tracks</h4>
-                  <p className="text-[#2B1F17]/65 text-xs font-sans font-light">Hand-finished fabrics, motorized Somfy/Lutron tracks, and 100% room blackout options.</p>
+                  <h4 className="font-serif text-[#2B1F17] font-medium text-sm">Custom Drapery &amp; Somfy / Tuya Motors</h4>
+                  <p className="text-[#2B1F17]/65 text-xs font-sans font-light">Hand-finished fabrics, motorized smart tracks, and Dream Curtains sheer systems.</p>
                 </div>
               </div>
 
@@ -324,8 +324,8 @@ const WindowCurtainShowcase = () => {
                   <Ruler size={16} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-[#2B1F17] font-medium text-sm">Precision Laser Site Measurement</h4>
-                  <p className="text-[#2B1F17]/65 text-xs font-sans font-light">Zero-error millimeter tolerance custom fabrication for every Canadian window frame.</p>
+                  <h4 className="font-serif text-[#2B1F17] font-medium text-sm">100% Free Site Measurement</h4>
+                  <p className="text-[#2B1F17]/65 text-xs font-sans font-light">Zero-error millimeter tolerance custom fabrication for every Bangalore residence.</p>
                 </div>
               </div>
 
@@ -334,8 +334,8 @@ const WindowCurtainShowcase = () => {
                   <Shield size={16} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-[#2B1F17] font-medium text-sm">1-Year Workmanship Warranty</h4>
-                  <p className="text-[#2B1F17]/65 text-xs font-sans font-light">Complete installation confidence backed by our Saskatoon master installation team.</p>
+                  <h4 className="font-serif text-[#2B1F17] font-medium text-sm">5–7 Years Window Warranty</h4>
+                  <p className="text-[#2B1F17]/65 text-xs font-sans font-light">3–4 days fast delivery and ₹250 nominal professional installation across Bangalore.</p>
                 </div>
               </div>
             </div>

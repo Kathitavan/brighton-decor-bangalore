@@ -13,8 +13,8 @@ import { ArrowRight, Sparkles, SlidersHorizontal, Box, FileText, CheckCircle2, C
 import styles from '../styles/pages/portfolio.module.css';
 
 const statsData = [
-  { value: '1,300+', label: 'Canadian Homes Transformed' },
-  { value: '4+', label: 'Years of Atelier Design' },
+  { value: '500+', label: 'Bangalore & South India Projects' },
+  { value: '4+', label: 'Years Craftsmanship' },
   { value: '100%', label: 'Client Satisfaction Rate' },
 ];
 
@@ -94,8 +94,8 @@ const Portfolio = () => {
   return (
     <PageTransition>
       <SEO
-        title="Portfolio of Luxury Living Spaces Across Canada"
-        description="Browse our curated showcase of completed window blind installations, architectural drapery, and motorized shading transformations across Saskatoon and Canada."
+        title="Portfolio of Luxury Living Spaces — Bangalore & South India"
+        description="Browse our curated showcase of completed Dream Curtains, window blind installations, custom drapery, and Somfy/Tuya motorized shading across Bangalore & South India."
       />
       <div className={styles.portfolioPage}>
         
@@ -131,7 +131,7 @@ const Portfolio = () => {
               >
                 <Sparkles size={14} className="text-[#C9A55A]" />
                 <span className="text-[10px] md:text-xs uppercase font-bold tracking-[0.25em] text-[#C9A55A] font-sans">
-                  Brighton Decor / Canadian Portfolio
+                  Brighton Decor / Bangalore Portfolio
                 </span>
               </motion.div>
 
@@ -153,7 +153,7 @@ const Portfolio = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-white/70 font-sans font-light text-base md:text-xl leading-relaxed max-w-2xl mx-auto mb-12"
               >
-                Explore a curated collection of residential interiors, bespoke window blinds, and tailored drapery created for homes across Canada.
+                Explore a curated collection of residential interiors, Dream Curtains, bespoke window blinds, and tailored drapery created for homes across Bangalore &amp; South India.
               </motion.p>
 
               {/* Animated Statistics Counters */}
@@ -261,7 +261,7 @@ const Portfolio = () => {
                   {/* Live Count Indicator */}
                   <div className="flex items-center justify-between text-xs text-white/50 font-sans">
                     <span>
-                      Showing <strong className="text-[#C9A55A] font-mono">{filteredProjects.length}</strong> of {projects.length} Canadian Portfolio Residences
+                      Showing <strong className="text-[#C9A55A] font-mono">{filteredProjects.length}</strong> of {projects.length} Bangalore Portfolio Residences
                     </span>
                     {searchQuery && (
                       <span>
@@ -367,21 +367,21 @@ const Portfolio = () => {
                 Considered Details. <br /> Uncompromising Quality.
               </h2>
               <p className="text-white/70 font-sans font-light text-base leading-relaxed">
-                At Brighton Decor Canada, every shade, custom drape, and hardwood plank is selected to harmonize light, acoustic comfort, and long-lasting durability across Canadian seasons.
+                At Brighton Decor Private Limited, every Dream Curtain, shade, and custom drape is selected to harmonize Bangalore daylight, acoustic comfort, and lasting durability with 5–7 years warranty.
               </p>
 
               <div className="pt-4 space-y-3 font-sans">
                 <div className="flex items-center gap-3 text-sm text-white/80">
                   <CheckCircle2 size={16} className="text-[#C9A55A]" />
-                  <span>Precision measure & custom architectural installation</span>
+                  <span>100% Free site measurement &amp; ₹250 nominal installation</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-white/80">
                   <CheckCircle2 size={16} className="text-[#C9A55A]" />
-                  <span>High-R thermal insulation for harsh winters & bright summers</span>
+                  <span>Fast 3–4 days delivery across Bangalore &amp; South India</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-white/80">
                   <CheckCircle2 size={16} className="text-[#C9A55A]" />
-                  <span>Integrated motorized smart home automation (Somfy & Lutron)</span>
+                  <span>Integrated smart home automation (Somfy &amp; Tuya)</span>
                 </div>
               </div>
             </div>

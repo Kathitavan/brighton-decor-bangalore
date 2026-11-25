@@ -9,6 +9,13 @@ const icons = { Layers, Grid, Frame, Sparkles };
 
 const services = [
   {
+    id: 'dream-curtains',
+    icon: 'Sparkles',
+    name: 'Dream Curtains',
+    desc: 'Walk-through sheer vertical louvers with 180° light rotation & washable vanes.',
+    path: '/services#dream-curtains',
+  },
+  {
     id: 'blinds',
     icon: 'Layers',
     name: 'Window Blinds',
@@ -18,22 +25,15 @@ const services = [
   {
     id: 'window-coverings',
     icon: 'Frame',
-    name: 'Window Coverings',
-    desc: 'Custom curtains, sheers, and blackout solutions.',
+    name: 'Custom Drapery',
+    desc: 'Custom pinch-pleat curtains, sheers, and blackout solutions.',
     path: '/services',
   },
   {
     id: 'motorized-shading',
     icon: 'Sparkles',
     name: 'Smart Motorized Shading',
-    desc: 'Automated blinds, Somfy integration & rechargeable wireless control.',
-    path: '/services',
-  },
-  {
-    id: 'flooring',
-    icon: 'Grid',
-    name: 'Flooring',
-    desc: 'Hardwood, laminate, luxury vinyl plank & modular carpet tile.',
+    desc: 'Somfy & Tuya automated blinds, app & remote shading control.',
     path: '/services',
   },
 ];
@@ -289,7 +289,7 @@ const ServicesTeaser = () => {
 
             <h2 className="font-serif text-white text-3xl sm:text-4xl md:text-5xl leading-tight">
               Architectural Services for <br />
-              <span className="italic text-[#C9A55A]">Refined Canadian Spaces</span>
+              <span className="italic text-[#C9A55A]">Refined Bangalore Spaces</span>
             </h2>
           </motion.div>
 
@@ -355,8 +355,8 @@ const ServicesTeaser = () => {
                       : activeModal === 'motorized-shading'
                       ? 'SMART MOTORIZED SUITE'
                       : activeModal === 'flooring'
-                      ? 'CANADIAN FLOORING'
-                      : 'CUSTOM DRAPERY & COVERINGS'}
+                      ? 'ARCHITECTURAL SURFACES'
+                      : 'CUSTOM DRAPERY & DREAM CURTAINS'}
                   </span>
                   <h3 className="font-serif text-white text-2xl sm:text-3xl font-light">
                     {activeModal === 'blinds'
@@ -385,11 +385,11 @@ const ServicesTeaser = () => {
                 data-lenis-prevent-touch
                 style={{ overscrollBehavior: 'contain' }}
               >
-                {/* 1. WINDOW BLINDS COLLECTION MODAL (PDF Page 3 & 4) */}
+                {/* 1. WINDOW BLINDS COLLECTION MODAL */}
                 {activeModal === 'blinds' && (
                   <div>
                     <p className="text-white/70 font-sans font-light text-sm md:text-base mb-8 max-w-2xl">
-                      Tailored window blinds for Canadian homes. Select a style to request a complimentary quote or test live in 3D.
+                      Tailored window blinds for Bangalore homes. Select a style to request a custom quote or test live in 3D.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                       {blindsDetails.map((blind) => (
@@ -448,7 +448,7 @@ const ServicesTeaser = () => {
                 {activeModal === 'motorized-shading' && (
                   <div>
                     <p className="text-white/70 font-sans font-light text-sm md:text-base mb-8 max-w-2xl">
-                      Experience automated living with smart motorized blinds, solarium shading, and organic textured treatments across Saskatoon and Canada.
+                      Experience automated living with Somfy &amp; Tuya smart motorized blinds and shading across Bangalore &amp; South India.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       {motorizedDetails.map((item) => (
@@ -556,7 +556,7 @@ const ServicesTeaser = () => {
                 {activeModal === 'flooring' && (
                   <div>
                     <p className="text-white/70 font-sans font-light text-sm md:text-base mb-8 max-w-2xl">
-                      Explore our complete range of Canadian-rated luxury flooring surfaces — Hardwood, Laminate, Luxury Vinyl Plank, and Modular Carpet Tile.
+                      Explore our architectural surface options — Hardwood, Laminate, Luxury Vinyl Plank, and Modular Carpet Tile.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       {flooringDetails.map((floor) => (
@@ -622,7 +622,7 @@ const ServicesTeaser = () => {
               {/* Modal Footer */}
               <div className="bg-[#121210] border-t border-white/10 px-6 sm:px-8 py-4 flex items-center justify-between shrink-0">
                 <span className="text-[10px] uppercase font-mono tracking-widest text-white/50">
-                  Brighton Decor Guarantee · 1-Year Workmanship Warranty
+                  Brighton Decor Bangalore · 5–7 Years Warranty
                 </span>
                 <button
                   onClick={closeModal}

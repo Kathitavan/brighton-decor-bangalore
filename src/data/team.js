@@ -1,65 +1,66 @@
+// Brighton Decor Private Limited — Bangalore HQ Leadership & Editorial Data
+
 export const teamMembers = [
   {
     id: 1,
-    name: "Jaspreet Singh",
-    role: "Founder & Creative Director",
-    image: "/assets/imgs/about/team-jaspreet.jpg"
+    name: 'N Musaib Ahmed',
+    role: 'Founder & Managing Director',
+    tagline:
+      'Leading Brighton Decor Private Limited in Bangalore with a commitment to architectural precision, smart motorization, and bespoke residential luxury.',
+    image: '/assets/imgs/about/team-jaspreet.jpg',
+    experience: '500+ Projects Delivered',
+    email: 'Musaib@brightondecor.in',
   },
   {
     id: 2,
-    name: "Sumanpreet Kaur",
-    role: "Head of Interior Design",
-    image: "/assets/imgs/about/team-sumanpreet.jpg"
+    name: 'Nisar Ahmed',
+    role: 'Co-Founder & Director',
+    tagline:
+      'Overseeing operations, Vinayaka Nagar showroom curation, 3–4 day delivery logistics, and precision installation teams across South India.',
+    image: '/assets/imgs/about/team-michael.jpg',
+    experience: 'Operations & Quality Head',
+    email: 'Info@brightondecor.in',
   },
-  {
-    id: 3,
-    name: "Michael Vance",
-    role: "Measurement & Fitment Specialist",
-    image: "/assets/imgs/about/team-michael.jpg"
-  },
-  {
-    id: 4,
-    name: "Deepika Rao",
-    role: "Project Manager",
-    image: "/assets/imgs/about/team-sumanpreet.jpg"
-  }
 ];
 
 export const blogPosts = [
   {
     id: 1,
-    category: "Design Tips",
-    title: "5 Ways to Maximize Small Apartment Spaces",
-    excerpt: "Living in a compact urban apartment doesn't mean you have to compromise on style or comfort.",
-    date: "May 12, 2025",
-    readTime: "6 min read",
-    image: "/assets/imgs/products/honeycomb-blinds.jpg"
+    category: 'Dream Curtains',
+    title: 'Dream Curtains: The Poetry of Sheers with the Privacy of Blinds',
+    excerpt:
+      'Discover how walk-through sheer vertical louvers let you glide effortlessly onto Bangalore balconies without parting a single track.',
+    date: 'Nov 12, 2026',
+    readTime: '5 min read',
+    image: '/assets/imgs/decore/living-room-custom-drapery.jpg',
   },
   {
     id: 2,
-    category: "Trends",
-    title: "The Return of Warm Earthy Tones in Living Rooms",
-    excerpt: "Discover why terracotta, olive, and warm beige are replacing sterile cool grays.",
-    date: "Apr 28, 2025",
-    readTime: "4 min read",
-    image: "/assets/imgs/home/hero-main.jpg"
+    category: 'Smart Automation',
+    title: 'Somfy vs. Tuya Motors: Automating Your Bangalore Residence',
+    excerpt:
+      'A practical guide to selecting whisper-quiet motorization for luxury apartments and villas across Whitefield, Indiranagar, and Sadashivanagar.',
+    date: 'Oct 28, 2026',
+    readTime: '6 min read',
+    image: '/assets/imgs/decore/motorized-zebra-blinds.jpg',
   },
   {
     id: 3,
-    category: "Technology",
-    title: "Architectural Motorization: Somfy & Smart Shading",
-    excerpt: "A deep dive into whisper-quiet motorization, smart home ecosystems, and seamless light management.",
-    date: "Apr 15, 2025",
-    readTime: "6 min read",
-    image: "/assets/imgs/decore/motorized-zebra-blinds.jpg"
-  }
+    category: 'Design Tips',
+    title: 'Beating Afternoon Glare & Tropical Heat in High-Rise Living',
+    excerpt:
+      'Comparing double-cell Honeycomb blinds, solar screen Rollers, and layered drapery for cooler, serene Bangalore interiors.',
+    date: 'Oct 10, 2026',
+    readTime: '4 min read',
+    image: '/assets/imgs/products/honeycomb-blinds.jpg',
+  },
 ];
 
 export const galleryItems = [
-  { id: 1, title: "Grand Living Room Drapery", category: "Residential", image: "/assets/imgs/decore/living-room-custom-drapery.jpg" },
-  { id: 2, title: "Modern Culinary Shade", category: "Kitchen", image: "/assets/imgs/decore/modern-kitchen-roller-shade.jpg" },
-  { id: 3, title: "Executive Boardroom Blinds", category: "Commercial", image: "/assets/imgs/decore/commercial-conference-blinds.jpg" },
-  { id: 4, title: "Prairie Sunroom Solar Shading", category: "Residential", image: "/assets/imgs/decore/conservatory-sunroom-shades.jpg" },
-  { id: 5, title: "Natural Woven Dining Shades", category: "Dining", image: "/assets/imgs/decore/natural-woven-dining-shades.jpg" },
-  { id: 6, title: "French Patio Door Drapery", category: "Living Room", image: "/assets/imgs/decore/french-patio-door-drapery.jpg" }
+  { id: 1, title: 'Sadashivanagar Penthouse Drapery', category: 'Residential', image: '/assets/imgs/decore/living-room-custom-drapery.jpg' },
+  { id: 2, title: 'Indiranagar Culinary Shade', category: 'Kitchen', image: '/assets/imgs/decore/modern-kitchen-roller-shade.jpg' },
+  { id: 3, title: 'Lavelle Road Executive Boardroom', category: 'Commercial', image: '/assets/imgs/decore/commercial-conference-blinds.jpg' },
+  { id: 4, title: 'Whitefield Villa Solar Shading', category: 'Residential', image: '/assets/imgs/decore/conservatory-sunroom-shades.jpg' },
+  { id: 5, title: 'HSR Layout Woven Bamboo Shades', category: 'Dining', image: '/assets/imgs/decore/natural-woven-dining-shades.jpg' },
+  { id: 6, title: 'Koramangala Dream Curtains Suite', category: 'Living Room', image: '/assets/imgs/decore/french-patio-door-drapery.jpg' },
 ];

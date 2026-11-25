@@ -3,7 +3,6 @@ import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Eye, Target, Quote, Sparkles } from 'lucide-react';
 
-// Mouse Spotlight Glass Card Component
 const GlassSpotlightCard = ({ children, className = '', borderGlow = 'border-[#C9A55A]/30' }) => {
   const cardRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -26,7 +25,6 @@ const GlassSpotlightCard = ({ children, className = '', borderGlow = 'border-[#C
       onMouseLeave={() => setIsHovered(false)}
       className={`relative overflow-hidden backdrop-blur-xl bg-gradient-to-br from-white/[0.05] via-white/[0.02] to-transparent border-t border-l ${borderGlow} border-r border-b border-white/10 rounded-2xl p-8 md:p-12 shadow-[0_30px_70px_rgba(0,0,0,0.5)] transition-all duration-500 hover:shadow-[0_40px_90px_rgba(201,165,90,0.15)] group ${className}`}
     >
-      {/* Dynamic Cursor Spotlight Effect */}
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-500 rounded-[inherit]"
         style={{
@@ -62,12 +60,9 @@ const VisionMission = () => {
       className="relative py-32 bg-[#0F0E0C] text-white overflow-hidden"
       aria-label="Vision and mission"
     >
-      {/* Background Decorative Lighting Blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C9A55A]/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
-        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +71,7 @@ const VisionMission = () => {
           >
             <Sparkles size={14} className="text-[#C9A55A]" />
             <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C9A55A]">
-              Core Purpose & Ideology
+              Core Purpose &amp; Ideology
             </span>
           </motion.div>
 
@@ -87,14 +82,11 @@ const VisionMission = () => {
             className="font-serif text-3xl sm:text-4xl md:text-5xl text-white leading-tight"
           >
             Guided by Vision. Driven by <br />
-            <span className="italic text-[#C9A55A]">Architectural Mission.</span>
+            <span className="italic text-[#C9A55A]">Bangalore Craftsmanship.</span>
           </motion.h2>
         </div>
 
-        {/* Asymmetric Luxury Glass Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
-          
-          {/* Vision Card */}
           <motion.div
             custom={0}
             initial="hidden"
@@ -113,22 +105,21 @@ const VisionMission = () => {
                 </span>
 
                 <h3 className="font-serif text-white text-2xl md:text-3xl leading-snug mb-6">
-                  The Premier Standard for Canadian Window Coverings & Flooring.
+                  South India’s Premier Benchmark for Window Architecture &amp; Smart Shading.
                 </h3>
 
                 <p className="text-white/70 font-sans font-light text-base leading-relaxed">
-                  We envision a Canada where every residence commands thoughtfully designed, flawlessly executed window treatments, motorized shading, and luxury flooring — delivered with complete pricing transparency, master craftsmanship, and genuine care from coast to coast.
+                  We envision every luxury apartment, villa, and commercial workspace across Bangalore and South India dressed in bespoke Dream Curtains, tailored drapery, and automated blinds — backed by 5–7 years warranty, rapid 3–4 day delivery, and honest custom quoting.
                 </p>
               </div>
 
               <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between text-xs text-white/50 font-mono uppercase tracking-widest">
-                <span>Vision 2030</span>
+                <span>South India Focus</span>
                 <span className="text-[#C9A55A]">✦ Excellence</span>
               </div>
             </GlassSpotlightCard>
           </motion.div>
 
-          {/* Mission Card */}
           <motion.div
             custom={1}
             initial="hidden"
@@ -147,11 +138,11 @@ const VisionMission = () => {
                 </span>
 
                 <h3 className="font-serif text-white text-2xl md:text-3xl leading-snug mb-6">
-                  To Elevate Every Home Through Considered Design & Flawless Execution.
+                  To Elevate Every Space Through Precision Measurement &amp; Tailored Fabrication.
                 </h3>
 
                 <p className="text-white/80 font-sans font-light text-base leading-relaxed">
-                  Our daily mission is to provide homeowners with bespoke window blinds, custom drapery, luxury flooring surfaces, expert zero-cost site measurement, and white-glove window installation — executed with transparency, integrity, and single-minded focus on your total satisfaction.
+                  Every project begins with a 100% free site measurement in Bangalore, curated 1m x 1m samples, optional Somfy or Tuya motorization, bespoke manufacturing, and nominal ₹250 professional installation — with zero compromise on satisfaction.
                 </p>
               </div>
 
@@ -161,10 +152,8 @@ const VisionMission = () => {
               </div>
             </GlassSpotlightCard>
           </motion.div>
-
         </div>
 
-        {/* Interactive Design Philosophy Quote Block */}
         <motion.div
           custom={2}
           initial="hidden"
@@ -172,7 +161,6 @@ const VisionMission = () => {
           variants={cardVariants}
           className="mt-20 relative max-w-4xl mx-auto backdrop-blur-xl bg-white/[0.02] border border-white/10 p-10 md:p-16 rounded-3xl text-center shadow-[0_30px_70px_rgba(0,0,0,0.5)]"
         >
-          {/* Giant Ambient Quotation Mark */}
           <div className="absolute top-6 left-1/2 -translate-x-1/2 text-9xl font-serif text-[#C9A55A]/10 pointer-events-none select-none leading-none">
             “
           </div>
@@ -187,15 +175,14 @@ const VisionMission = () => {
             </h3>
 
             <blockquote className="font-serif text-white text-xl sm:text-2xl md:text-3xl leading-relaxed italic max-w-3xl mx-auto mb-6">
-              "The finest interior solutions do not demand attention — they command respect by seamlessly echoing the lifestyle, light, and aesthetic soul of the people who live within."
+              "The finest window treatments do not overpower a room — they sculpt daylight, preserve privacy, and elevate the architecture of your home."
             </blockquote>
 
             <p className="text-white/50 font-sans text-xs uppercase tracking-[0.2em]">
-              Brighton Decor Ltd · Design Council Statement
+              Brighton Decor Private Limited · Bangalore HQ
             </p>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

@@ -39,7 +39,7 @@ const ProjectCard = ({ project, index, onClick, colSpan = 'col-span-12 md:col-sp
         <motion.img
           layoutId={`project-img-${project.id}`}
           src={project.image}
-          alt={`${project.title} — Brighton Decor Canada`}
+          alt={`${project.title} — Brighton Decor Bangalore`}
           className="w-full h-full object-cover object-center transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
           loading={index < 2 ? 'eager' : 'lazy'}
           onError={(e) => {

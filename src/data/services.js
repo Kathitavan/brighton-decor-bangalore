@@ -1,136 +1,185 @@
 // src/data/services.js
-// Single source of truth dataset for Brighton Decor Canada Services
+// Single source of truth dataset for Brighton Decor Private Limited (Bangalore HQ)
 
 export const services = [
+  {
+    id: 'dream-curtains',
+    name: 'Dream Curtains',
+    category: 'FLAGSHIP SHEER DRAPERY',
+    tagline: 'The Poetry of Sheers with the Privacy of Blinds.',
+    image: '/assets/imgs/decore/living-room-custom-drapery.jpg',
+    description:
+      'Walk-through sheer vertical louvers with seamless light transitions. Effortlessly glide through closed curtains without opening them.',
+    longDescription:
+      'Introducing Dream Curtains — our flagship architectural window system for discerning Bangalore residences. Engineered with soft-flowing, walk-through sheer vertical louvers that rotate 180° for effortless transitions from sunlit radiance to complete evening privacy. Individual fabric vanes are machine washable and pair seamlessly with motorized smart wands or Somfy/Tuya remote controls.',
+    icon: 'Sparkles',
+    features: [
+      'Walk-Through Fabric Vanes',
+      '180° Light Rotation',
+      'Machine Washable Individual Vanes',
+      'Motorized Smart Wand or Remote Control',
+      '1m x 1m Samples & Bespoke Site Sizing',
+      '5–7 Years Warranty',
+    ],
+  },
   {
     id: 'blinds',
     name: 'Window Blinds',
     category: 'WINDOW SOLUTIONS',
-    tagline: 'Quiet control. Beautifully finished.',
+    tagline: 'Precision light control. 5–7 years warranty.',
     image: '/assets/imgs/products/roller-blinds.jpg',
-    description: 'Premium blinds in every style — roller, zebra, honeycomb, vertical, wooden, and PVC — expertly fitted for any window.',
+    description:
+      'Custom-engineered Roller, Zebra, Honeycomb, Wooden, Vertical, and PVC blinds tailored to exact Bangalore window dimensions.',
     longDescription:
-      'We carry an extensive range of window blinds to suit every taste, window type, and budget. From the clean minimalism of roller blinds to the warm character of wooden and faux-wood options, we help you find the perfect match. All products are measured precisely and installed professionally.',
+      'We craft an architectural collection of window blinds suited for Bangalore villas, high-rise apartments, and corporate spaces. From minimal solar-screen Roller and dual-layer Zebra blinds to thermal Honeycomb, natural Wooden, Vertical, and waterproof PVC blinds — every order is custom measured for free and delivered in 3–4 days.',
     icon: 'Layers',
-    features: ['Roller Blinds', 'Zebra Blinds', 'Honeycomb Blinds', 'Vertical Blinds', 'Wooden & Faux Wood', 'PVC Blinds'],
+    features: [
+      'Roller Blinds',
+      'Zebra Blinds',
+      'Honeycomb Blinds',
+      'Wooden Blinds',
+      'Vertical Blinds',
+      'PVC Blinds',
+    ],
   },
   {
     id: 'window-coverings',
-    name: 'Window Coverings',
-    category: 'CUSTOM DRAPERY',
-    tagline: 'Light, shadow, and architectural drape.',
+    name: 'Custom Drapery',
+    category: 'ARCHITECTURAL DRAPERY',
+    tagline: 'Light, shadow, and tailored Indian luxury.',
     image: '/assets/imgs/decore/french-patio-door-drapery.jpg',
-    description: 'Complete window solutions — from bespoke French door drapery and pinch pleats to luxury sheers that complement your interior.',
+    description:
+      'Bespoke pinch-pleat curtains, ceiling-recessed sheer tracks, and blackout drapery tailored for balconies, bay windows, and grand living rooms.',
     longDescription:
-      'Beyond blinds, we offer a full range of custom drapery and architectural window coverings tailored to your space. Whether you are looking for privacy, thermal insulation, motorized curtain tracks, or grand floor-to-ceiling sheer elegance, our team crafts every drape to perfection.',
+      'Beyond blinds and Dream Curtains, our atelier tailors floor-to-ceiling custom drapery and architectural window coverings. Whether you require acoustic blackout linings for bedroom serenity, Belgian linen sheers for natural ventilation, or heavy-duty silent motorized tracks, our team delivers flawless finish within 3–4 days.',
     icon: 'Frame',
-    features: ['Custom Drapery & Sheers', 'Pinch-Pleat Curtains', 'Patio Door Treatments', 'Blackout Linings', 'Child-Safe Cordless Systems', 'Motorized Drapery Tracks'],
+    features: [
+      'Pinch-Pleat & S-Fold Curtains',
+      'Sheer & Blackout Layering',
+      'French & Balcony Door Drapery',
+      'Ceiling-Recessed Tracks',
+      'Somfy / Tuya Motorized Tracks',
+      '5–7 Years Warranty',
+    ],
   },
   {
     id: 'motorized-shading',
     name: 'Smart Motorized Shading',
     category: 'AUTOMATION & MOTORIZATION',
-    tagline: 'Effortless automated control at your fingertips.',
+    tagline: 'Somfy & Tuya smart home control across all products.',
     image: '/assets/imgs/decore/motorized-zebra-blinds.jpg',
-    description: 'Smart motorized blinds, automated solar shades, and architectural coverings integrated with remote, smartphone, and voice control.',
+    description:
+      'Remote-controlled & smart home shading powered by Somfy and Tuya motors — available across Dream Curtains, blinds, and custom drapery.',
     longDescription:
-      'Experience modern convenience with whisper-quiet motorized window treatments. From rechargeable battery-powered motors to integrated smart-home automation (Somfy, Lutron, Matter), control your blinds with the touch of a button or set automated schedules for privacy, thermal comfort, and energy savings.',
+      'Elevate everyday convenience with whisper-quiet motorized window solutions. Available across every product category with your choice of Somfy or Tuya motors (final quote depends on selected motor brand and site dimensions). Sync with wall switches, handheld remotes, smartphone apps, and voice assistants.',
     icon: 'Sparkles',
-    features: ['Somfy & Smart Home Sync', 'Rechargeable Cordless Motors', 'Handheld & Wall Remotes', 'Smartphone App Automation', 'Child & Pet Safe (100% Cordless)', 'Multi-Window Group Sync'],
+    features: [
+      'Somfy & Tuya Motor Options',
+      'App, Voice & Remote Control',
+      'Rechargeable & Hardwired Motors',
+      'Automated Sun & Privacy Schedules',
+      'Child & Pet Safe Cordless Design',
+      'Multi-Window Group Sync',
+    ],
     types: [
+      {
+        name: 'Motorized Dream Curtains',
+        desc: '180° automated sheer vertical louver rotation and smooth silent traverse via Somfy or Tuya control.',
+        image: '/assets/imgs/decore/living-room-custom-drapery.jpg',
+      },
       {
         name: 'Automated Zebra & Roller Blinds',
-        desc: 'Sleek motorized dual-layer zebra and roller shades offering one-touch transitions between light filtering and complete privacy.',
-        image: '/assets/imgs/decore/motorized-zebra-blinds.jpg'
+        desc: 'Motorized dual-layer zebra and solar roller shades delivering one-touch daylight-to-blackout transitions.',
+        image: '/assets/imgs/decore/motorized-zebra-blinds.jpg',
       },
       {
-        name: 'Sunroom & Solarium Shading',
-        desc: 'Engineered multi-panel solar shades designed specifically for cathedral sunrooms, conservatories, and large panoramic architectural glass.',
-        image: '/assets/imgs/decore/conservatory-sunroom-shades.jpg'
+        name: 'Penthouse & Double-Height Shading',
+        desc: 'High-torque motorized roller and drapery systems engineered for panoramic villa glass and double-height lounges.',
+        image: '/assets/imgs/decore/conservatory-sunroom-shades.jpg',
       },
       {
-        name: 'Commercial & Executive Blinds',
-        desc: 'Heavy-duty architectural window systems engineered for boardrooms, meeting pavilions, and corporate office developments.',
-        image: '/assets/imgs/decore/commercial-conference-blinds.jpg'
+        name: 'Commercial & Boardroom Systems',
+        desc: 'Anti-glare architectural blinds engineered for Bangalore tech parks, executive boardrooms, and luxury offices.',
+        image: '/assets/imgs/decore/commercial-conference-blinds.jpg',
       },
-      {
-        name: 'Natural Woven Texture Shades',
-        desc: 'Artisanal organic bamboo and woven wood roller shades delivering organic warmth, rich grain texture, and soft daylight diffusion.',
-        image: '/assets/imgs/decore/natural-woven-dining-shades.jpg'
-      }
-    ]
-  },
-  {
-    id: 'flooring',
-    name: 'Flooring',
-    category: 'FLOORING SURFACES',
-    tagline: 'Refined textures. Enduring architectural foundations.',
-    image: '/assets/imgs/products/hardwood-flooring.jpg',
-    description: 'Curated premium flooring surfaces — rich hardwood, resilient laminate, waterproof luxury vinyl plank, and modular carpet tile collections.',
-    longDescription:
-      'The right flooring establishes the tone, warmth, and character of every room. We supply a curated portfolio of Canadian-climate rated flooring materials selected for lasting durability, scratch resistance, and refined aesthetics. From natural solid oak hardwood to high-traffic waterproof vinyl plank and acoustic carpet tiles, we help you find the ideal surface for your home.',
-    icon: 'Grid',
-    features: ['Solid & Engineered Hardwood', 'High-Density Laminate', '100% Waterproof Vinyl Plank (LVP)', 'Modular Acoustic Carpet Tile', 'Canadian Climate Rated', 'Sample Viewing in Your Space'],
-    types: [
-      {
-        name: 'Hardwood Flooring',
-        desc: 'Rich solid and engineered hardwood timber planks, precision milled for natural grain warmth and long-lasting durability.',
-        image: '/assets/imgs/products/hardwood-flooring.jpg'
-      },
-      {
-        name: 'Laminate Flooring',
-        desc: 'High-density scratch-resistant laminate flooring replicating real timber aesthetics with effortless maintenance and water resilience.',
-        image: '/assets/imgs/products/laminate-flooring.jpg'
-      },
-      {
-        name: 'Luxury Vinyl Plank (LVP)',
-        desc: '100% waterproof luxury vinyl plank flooring engineered for high-traffic family zones, basements, kitchens, and moisture-prone areas.',
-        image: '/assets/imgs/products/vinyl-plank.jpg'
-      },
-      {
-        name: 'Engineered Chevron Parquet',
-        desc: 'Artisanal chevron and herringbone hardwood flooring delivering architectural sophistication and timeless prestige.',
-        image: '/assets/imgs/products/engineered-hardwood.jpg'
-      },
-      {
-        name: 'Carpet Tile & Textures',
-        desc: 'Modular, comfortable carpet tiles providing soft underfoot warmth, acoustic insulation, and simple individual tile stain replacement.',
-        image: '/assets/imgs/products/carpet-tile.jpg'
-      }
-    ]
+    ],
   },
   {
     id: 'measurement',
     name: 'Free Site Measurement',
-    category: 'SITE CONCIERGE',
-    tagline: 'Zero cost. Guaranteed precision.',
+    category: 'BANGALORE CONCIERGE',
+    tagline: '100% Free across Bangalore. Zero obligation.',
     image: '/assets/imgs/portfolio/project-1.jpg',
-    description: 'Complimentary on-site measurement for accurate quotes and a perfect fit, every single time.',
+    description:
+      'Complimentary on-site measurement & consultation anywhere in Bangalore for millimeter-accurate custom fabrication.',
     longDescription:
-      'Accurate measurement is the foundation of every great installation. We visit your home at no charge, take precise measurements of every window and floor area, and use these to provide you with an accurate, no-surprise quote. This service is completely free with no obligation.',
+      'Every bespoke window installation begins with exact measurement. Our Bangalore specialists visit your home or office 100% free of charge with 1m x 1m samples, take laser-precise window measurements, and provide a tailored custom quote. Fast 3–4 days delivery and nominal ₹250 professional installation.',
     icon: 'Ruler',
-    features: ['No-Charge Service', 'Professional Measurement Tools', 'Accurate Quoting', 'No Obligation', 'Same-Day Quote Available', 'All of Saskatoon & Area'],
+    features: [
+      '100% Free Site Visit in Bangalore',
+      '1m x 1m Physical Sample Viewing',
+      'Bespoke Site Sizing',
+      'Custom Tailored Quotes',
+      '3–4 Days Fast Lead Time',
+      '₹250 Nominal Installation',
+    ],
   },
   {
     id: 'consultation',
-    name: 'Design Consultation',
-    category: 'ATELIER ADVISORY',
-    tagline: 'Personalized interior guidance in your space.',
+    name: 'Showroom & Design Consultation',
+    category: 'VINAYAKA NAGAR SHOWROOM',
+    tagline: 'Visit our Bangalore showroom Mon–Sun, 10 AM – 8 PM.',
     image: '/assets/imgs/about/showroom-saskatoon.jpg',
-    description: 'Expert guidance to help you choose products that align with your vision, your home, and your lifestyle.',
+    description:
+      'Experience Dream Curtains, blinds, drapery fabrics, and live Somfy/Tuya motors at our Vinayaka Nagar showroom or in your home.',
     longDescription:
-      'Not sure where to start? Our team brings samples directly to your home so you can see exactly how products will look in your actual space with your actual lighting. We offer honest, no-pressure advice tailored to your needs and budget.',
+      "Visit our physical showroom at 2nd 'C' Cross, Vinayaka Nagar, Bangalore - 560030 (open Monday to Sunday, 10:00 AM – 8:00 PM) or book a home visit. Compare sheer weaves, blackout textiles, wooden slats, and motorized tracks side-by-side with honest guidance from our leadership and design specialists.",
     icon: 'Lightbulb',
-    features: ['In-Home Sample Viewing', 'Product Recommendations', 'Style Guidance', 'Budget Planning', 'Light & Privacy Advice', 'No-Pressure Approach'],
+    features: [
+      'Physical Showroom in Bangalore',
+      'Open Mon–Sun: 10 AM – 8 PM',
+      'Live Motorization Demos',
+      '1m x 1m Swatch Library',
+      'Light & Privacy Engineering',
+      'Dedicated Project Concierge',
+    ],
   },
 ];
 
 export const processSteps = [
-  { step: '01', title: 'Contact Us', description: 'Reach out by phone, email, or our online form to get started with your project.' },
-  { step: '02', title: 'Free Site Measurement', description: 'We visit your home at no charge and take precise measurements of every window and floor area.' },
-  { step: '03', title: 'Understand Your Needs', description: 'We listen carefully to your preferences, lifestyle, and budget to find the perfect solution.' },
-  { step: '04', title: 'Product Recommendation', description: 'We present a curated selection of products that work beautifully in your specific space.' },
-  { step: '05', title: 'Confirm Selection', description: 'You review samples and colours in your own home, make your choices, and we finalize the order.' },
-  { step: '06', title: 'Professional Installation', description: 'Our skilled team installs everything with precision, care, and zero mess left behind.' },
-  { step: '07', title: 'Project Complete', description: 'Enjoy your beautifully transformed home, backed by our 1-year workmanship warranty.' },
+  {
+    step: '01',
+    title: 'Contact or Visit Showroom',
+    description: "Call or WhatsApp +91 9731801476, or drop by our Vinayaka Nagar showroom in Bangalore (10 AM – 8 PM daily).",
+  },
+  {
+    step: '02',
+    title: 'Free Site Measurement',
+    description: '100% complimentary on-site visit anywhere in Bangalore for laser-accurate window dimensions.',
+  },
+  {
+    step: '03',
+    title: 'Sample & Product Selection',
+    description: 'Preview 1m x 1m samples of Dream Curtains, blinds, and drapery fabrics in your actual room light.',
+  },
+  {
+    step: '04',
+    title: 'Motorization & Custom Quote',
+    description: 'Choose manual or Somfy / Tuya smart motors and receive a tailored quote — no hidden charges.',
+  },
+  {
+    step: '05',
+    title: 'Bespoke Fabrication (3–4 Days)',
+    description: 'Your custom architectural order is crafted to exact site measurements with a fast 3–4 day turnaround.',
+  },
+  {
+    step: '06',
+    title: 'Precision Installation (₹250)',
+    description: 'Trained technicians complete clean, dust-free installation across Bangalore for a nominal ₹250 fee.',
+  },
+  {
+    step: '07',
+    title: '5–7 Years Warranty Assurance',
+    description: 'Enjoy lasting elegance backed by our 5 to 7 years warranty on window solutions and 100% satisfaction.',
+  },
 ];

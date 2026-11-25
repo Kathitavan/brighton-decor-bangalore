@@ -169,12 +169,11 @@ const Footer = () => {
                 { label: 'Home', path: '/' },
                 { label: 'About Us', path: '/about' },
                 { label: 'Services', path: '/services' },
-                { label: 'Products & Decor', path: '/products' },
-                { label: 'Flooring', path: '/services#flooring' },
+                { label: 'Products & Dream Curtains', path: '/products' },
                 { label: '3D Room Studio', path: '/room-viewer' },
                 { label: 'Client Reviews', path: '/testimonials' },
                 { label: 'Design Ideas', path: '/blog' },
-                { label: 'Contact', path: '/contact' },
+                { label: 'Contact & Showroom', path: '/contact' },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -193,12 +192,12 @@ const Footer = () => {
             <h3 className={`font-serif text-lg font-medium ${theme.textHeading}`}>Our Services</h3>
             <ul className="space-y-2.5 font-sans">
               {[
+                { name: 'Dream Curtains', path: '/services#dream-curtains' },
                 { name: 'Window Blinds', path: '/services#blinds' },
-                { name: 'Window Coverings', path: '/services#coverings' },
-                { name: 'Smart Motorized Shading', path: '/services#motorization' },
-                { name: 'Flooring', path: '/services#flooring' },
+                { name: 'Custom Drapery', path: '/services#window-coverings' },
+                { name: 'Smart Motorized Shading', path: '/services#motorized-shading' },
                 { name: 'Free Site Measurement', path: '/services#measurement' },
-                { name: 'Design Consultation', path: '/services#consultation' },
+                { name: 'Showroom Consultation', path: '/services#consultation' },
               ].map((service) => (
                 <li key={service.name}>
                   <Link
@@ -230,28 +229,37 @@ const Footer = () => {
                   {company.phone}
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail size={15} className={`${theme.accentText} flex-shrink-0`} />
-                <a
-                  href={`mailto:${company.email}`}
-                  className={`transition-colors font-light ${theme.textMuted} hover:${theme.accentText}`}
-                >
-                  {company.email}
-                </a>
+              <li className="flex items-start gap-3">
+                <Mail size={15} className={`${theme.accentText} mt-0.5 flex-shrink-0`} />
+                <div className="space-y-0.5">
+                  <a
+                    href={`mailto:${company.email}`}
+                    className={`block transition-colors font-light ${theme.textMuted} hover:${theme.accentText}`}
+                  >
+                    {company.email}
+                  </a>
+                  <a
+                    href={`mailto:${company.salesEmail}`}
+                    className={`block transition-colors font-light ${theme.textMuted} hover:${theme.accentText}`}
+                  >
+                    {company.salesEmail}
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Clock size={15} className={`${theme.accentText} mt-0.5 flex-shrink-0`} />
                 <div className={`font-light ${theme.textMuted}`}>
-                  <p>{company.hours.weekdays}</p>
-                  <p>{company.hours.time}</p>
+                  <p>{company.hoursSchedule?.weekdays || 'Monday – Sunday'}</p>
+                  <p>{company.hoursSchedule?.time || company.hours}</p>
                 </div>
               </li>
             </ul>
             <div>
               <p className={`text-[10px] uppercase tracking-[0.2em] font-bold font-sans mb-1 ${theme.accentText}`}>
-                Service Area
+                GST &amp; Service Area
               </p>
-              <p className={`text-xs font-light ${theme.textMuted}`}>{company.serviceArea}</p>
+              <p className={`text-xs font-mono ${theme.textMuted}`}>GST: {company.gst}</p>
+              <p className={`text-xs font-light mt-0.5 ${theme.textMuted}`}>{company.serviceArea}</p>
             </div>
           </div>
         </div>
@@ -260,16 +268,16 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className={`border-t ${theme.border} ${theme.bgBottom}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-3 font-sans">
-          <p className={`text-xs font-light ${theme.textMuted}`}>
-            &copy; {currentYear} Brighton Decor Ltd. All rights reserved. Based in Saskatoon, Saskatchewan, Canada.
+          <p className={`text-xs font-light text-center md:text-left ${theme.textMuted}`}>
+            &copy; {currentYear} {company.legalName}. All rights reserved. Vinayaka Nagar, Bangalore, Karnataka - 560030. · {company.customOrderPolicy}
           </p>
           <a
-            href="https://maps.app.goo.gl/5iuFnetoc1zvR1oF7"
+            href={company.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-xs transition-colors font-light ${theme.textMuted} hover:${theme.accentText}`}
+            className={`text-xs transition-colors font-light shrink-0 ${theme.textMuted} hover:${theme.accentText}`}
           >
-            View on Google Maps
+            View Showroom on Google Maps
           </a>
         </div>
       </div>

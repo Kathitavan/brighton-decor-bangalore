@@ -1,12 +1,12 @@
 // src/pages/Home.jsx
+// Brighton Decor Private Limited — 8-Section Distinct Dark Luxury Homepage (Bangalore HQ)
 import React from 'react';
 import PageTransition from '../components/common/PageTransition';
 import SEO from '../components/common/SEO';
 import Hero from '../components/home/Hero';
 import Stats from '../components/home/Stats';
-import ServicesTeaser from '../components/home/ServicesTeaser';
-import Immersive3DShowcase from '../components/home/Immersive3DShowcase';
 import ProductsSection from '../components/home/ProductsSection';
+import Immersive3DShowcase from '../components/home/Immersive3DShowcase';
 import WhyBrighton from '../components/home/WhyBrighton';
 import AboutSnippet from '../components/home/AboutSnippet';
 import ProcessSection from '../components/home/ProcessSection';
@@ -19,42 +19,35 @@ const Home = () => {
   return (
     <PageTransition>
       <SEO
-        title="Luxury Window Blinds, Custom Drapery & Motorized Shading — Saskatoon & Canada"
-        description="Elevate your Canadian living space with Brighton Decor Ltd. Master-crafted roller, zebra, honeycomb, and wooden blinds alongside bespoke drapery and motorized window solutions in Saskatoon, Saskatchewan."
-        ogImage="https://brightondecor.co/assets/imgs/main%20logo.png"
+        title="Luxury Window Blinds, Dream Curtains & Drapery | Bangalore"
+        description="Brighton Decor Private Limited — Brightening your home, Defining Your Space. Dream Curtains, custom Roller, Zebra, Honeycomb & Wooden blinds, and Somfy/Tuya motorized drapery in Bangalore, Karnataka & South India."
+        ogImage="https://brightondecor.in/assets/imgs/main%20logo.png"
       />
       <div className={styles.homePage}>
-        {/* 1. Hero — cinematic video introduction */}
+        {/* Section 1: Hero — Obsidian & 24K Champagne Gold (#0a0a0a) */}
         <Hero />
 
-        {/* 2. Stats — kinetic trust statistics */}
+        {/* Section 2: Trust Stats & GST Badge — Onyx & Brushed Bronze (#121212) */}
         <Stats />
 
-        {/* 3. Services — architectural offerings */}
-        <ServicesTeaser />
+        {/* Section 3: Flagship Products & Dream Curtains — Deep Emerald Tinted Noir (#06140f -> #0b0f12) */}
+        <ProductsSection />
 
-        {/* 4. "The Window" — Cinematic Scroll-Driven Hero Experience */}
+        {/* Section 4: The 3D Interactive Room Studio — Midnight Sapphire & Platinum Gold (#080c18) */}
         <Immersive3DShowcase />
 
-        {/* 5. Products Section — Bespoke Blinds Collection */}
-        {/* <ProductsSection /> */}
-
-        {/* 6. Why Brighton Decor */}
+        {/* Section 5: Why Brighton Decor & Bangalore Craftsmanship — Espresso Luxe & Warm Champagne (#120e0b) */}
         <WhyBrighton />
-
-        {/* 9. About snippet */}
         <AboutSnippet />
 
-        {/* 10. Our process — 7-step journey */}
+        {/* Section 6: The 7-Step Concierge Process — Titanium Slate & Amber Gold (#0e131b) */}
         <ProcessSection />
 
-        {/* 11. Testimonials */}
+        {/* Section 7: Verified Bangalore Reviews & Testimonials — Charcoal Velvet & Star Gold (#141416) */}
         <Testimonials />
-
-        {/* 12. FAQ */}
         <FAQSection />
 
-        {/* 13. Final CTA Banner */}
+        {/* Section 8: Showroom, Contact & Bangalore Live Map — High-Contrast Noir & Radiant Gold (#050506) */}
         <CTABanner />
       </div>
     </PageTransition>

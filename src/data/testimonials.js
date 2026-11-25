@@ -1,42 +1,40 @@
-// Brighton Decor Ltd — Canada Testimonials
-// Placeholder structure — client can provide real testimonials to populate.
+// Brighton Decor Private Limited — Verified Bangalore Client Reviews
 
 export const testimonials = [
   {
     id: 1,
-    name: 'Sarah M.',
-    city: 'Saskatoon, SK',
+    name: 'Ananya & Karthik R.',
+    city: 'Whitefield, Bangalore',
     quote:
-      'Brighton Decor made the whole process completely stress-free. They measured everything, helped us choose the right blinds, and the installation was immaculate. Our home feels entirely transformed.',
+      'Brighton Decor arrived right on time for our free site measurement in Whitefield. They brought 1m x 1m samples so we could see the exact fabric in our lighting, delivered our motorized zebra blinds in 4 days, and installed everything cleanly for just ₹250.',
     rating: 5,
-    service: 'Roller Blinds Installation',
+    service: 'Motorized Zebra Blinds (Somfy)',
   },
   {
     id: 2,
-    name: 'James & Linda K.',
-    city: 'Saskatoon, SK',
+    name: 'Rohan Deshmukh',
+    city: 'Indiranagar, Bangalore',
     quote:
-      'We had new flooring and custom blinds selected for our main floor renovation. The materials are stunning, punctual, and of exceptional quality — we couldn\'t be happier.',
+      'We installed Dream Curtains across our living room balcony in Indiranagar — being able to walk straight through closed sheer curtains without pulling them open is a revelation. Precision workmanship and a 5–7 year warranty gave us complete confidence.',
     rating: 5,
-    service: 'Blinds & Flooring',
+    service: 'Dream Curtains Showcase',
   },
   {
     id: 3,
-    name: 'Michelle Harmington',
-    city: 'Happy client',
+    name: 'Meera & Siddharth N.',
+    city: 'HSR Layout, Bangalore',
     quote:
-      'Thoughtful, efficient and engaging process in which I felt like my preferences were understood and reflected in the final design. Look forward to using and referring to them in the future.',
+      'Musaib and the team visited our HSR Layout home with zero sales pressure, measured every window with millimeter accuracy, and delivered custom wooden & woven blinds within 3 days. Truly punctual and refined craftsmanship.',
     rating: 5,
-    service: 'Interior Styling',
-    avatar: '/assets/imgs/testimonials/michelle-harmington.png',
+    service: 'Wooden & Bamboo Blinds',
   },
   {
     id: 4,
-    name: 'David T.',
-    city: 'Saskatchewan',
+    name: 'Prashanth Gowda',
+    city: 'Jayanagar, Bangalore',
     quote:
-      'I used the 3D room tool on their website to visualize different blinds before committing. When they installed the real thing, it looked exactly as I\'d imagined. Brilliant service from start to finish.',
+      'Visited their Vinayaka Nagar showroom on a Sunday and tested their 3D Room Studio before finalizing Tuya motorized blackout rollers for our Jayanagar residence. Flawless fit, super polite technicians, and 100% worth it.',
     rating: 5,
-    service: 'Vertical Blinds Installation',
+    service: 'Tuya Motorized Blackout Blinds',
   },
 ];

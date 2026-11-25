@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import { Sparkles, Crown, Shield, Award, Gem, Layers, Sun, Compass, Feather, Star } from 'lucide-react';
 
 const row1Brands = [
-  { name: 'Hunter Douglas', category: 'Automated Shading', icon: Sun },
   { name: 'Somfy', category: 'Smart Motorization', icon: Layers },
+  { name: 'Tuya Smart', category: 'App & Voice Motors', icon: Sparkles },
+  { name: 'Hunter Douglas', category: 'Automated Shading', icon: Sun },
   { name: 'Lutron', category: 'Lighting & Control', icon: Sparkles },
   { name: 'Graber', category: 'Custom Treatments', icon: Shield },
   { name: 'Norman', category: 'Architectural Shutters', icon: Crown },
@@ -13,7 +14,6 @@ const row1Brands = [
   { name: 'Sunbrella', category: 'Performance Fabrics', icon: Sun },
   { name: 'Maharam', category: 'Architectural Weaves', icon: Compass },
   { name: 'Romo', category: 'British Atelier', icon: Feather },
-  { name: 'Osborne & Little', category: 'Designer Wallpapers', icon: Star },
 ];
 
 const row2Brands = [

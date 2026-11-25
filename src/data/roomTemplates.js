@@ -1,13 +1,12 @@
 // src/data/roomTemplates.js
-// Brighton Decor Ltd — Curated Architectural Room Transformations
-// Each preset harmoniously configures the entire 3D space in 1 click.
+// Brighton Decor Private Limited — Curated Architectural Room Transformations (Bangalore HQ)
 
 export const TEMPLATES = {
   BARE_ARCHITECTURAL: {
     id: 'BARE_ARCHITECTURAL',
     name: 'Pure Clean Architectural',
     style: 'Minimalist Daylight',
-    desc: 'Bare architectural window, pure Canadian daylight, light oak parquet & alabaster walls.',
+    desc: 'Bare architectural window, pure Bangalore morning daylight, light oak parquet & alabaster walls.',
     wallColor: '#F5F0E8',
     floorType: 'lightoak',
     sofaColor: '#ECE7DE',
@@ -25,11 +24,11 @@ export const TEMPLATES = {
     decorOn: true,
     fanOn: false,
   },
-  SASKATOON_PENTHOUSE: {
-    id: 'SASKATOON_PENTHOUSE',
-    name: 'Saskatoon Flagship Penthouse',
+  SADASHIVANAGAR_PENTHOUSE: {
+    id: 'SADASHIVANAGAR_PENTHOUSE',
+    name: 'Sadashivanagar Penthouse',
     style: 'Layered Luxury',
-    desc: 'Dual-layer zebra blinds framed with sheer architectural linen and curved bouclé seating.',
+    desc: 'Dual-layer zebra blinds framed with sheer architectural drapery and curved bouclé seating.',
     wallColor: '#F5F0E8',
     floorType: 'lightoak',
     sofaColor: '#ECE7DE',
@@ -47,9 +46,9 @@ export const TEMPLATES = {
     decorOn: true,
     fanOn: false,
   },
-  PRAIRIE_SUNSET: {
-    id: 'PRAIRIE_SUNSET',
-    name: 'Prairie Sunset Suite',
+  INDIRANAGAR_VILLA: {
+    id: 'INDIRANAGAR_VILLA',
+    name: 'Indiranagar Villa Suite',
     style: 'Warm Hardwood & Leather',
     desc: 'Hardwood venetian blinds with saddle leather seating and warm golden hour sunlight.',
     wallColor: '#D4C4A8',
@@ -69,10 +68,10 @@ export const TEMPLATES = {
     decorOn: true,
     fanOn: false,
   },
-  SCANDINAVIAN_MINIMAL: {
-    id: 'SCANDINAVIAN_MINIMAL',
-    name: 'Scandinavian Minimalist',
-    style: 'Nordic Clarity',
+  KORAMANGALA_MINIMAL: {
+    id: 'KORAMANGALA_MINIMAL',
+    name: 'Koramangala Minimalist',
+    style: 'Modern Clarity',
     desc: 'Sleek cassette roller blinds, bleached ash floors, and crisp architectural daylight.',
     wallColor: '#F5F0E8',
     floorType: 'bleachedash',
@@ -91,9 +90,9 @@ export const TEMPLATES = {
     decorOn: true,
     fanOn: false,
   },
-  EXECUTIVE_NOIR: {
-    id: 'EXECUTIVE_NOIR',
-    name: 'Executive Midnight Noir',
+  LAVELLE_NOIR: {
+    id: 'LAVELLE_NOIR',
+    name: 'Lavelle Executive Noir',
     style: 'Acoustic Serenity',
     desc: 'Deep charcoal limewash walls, acoustic blackout velvet drapery, and smoked walnut floors.',
     wallColor: '#1E1C1A',
@@ -113,11 +112,11 @@ export const TEMPLATES = {
     decorOn: true,
     fanOn: false,
   },
-  ARTISAN_LINEN: {
-    id: 'ARTISAN_LINEN',
-    name: 'Artisan Linen & Botanical',
+  HSR_BOTANICAL: {
+    id: 'HSR_BOTANICAL',
+    name: 'HSR Botanical Sanctuary',
     style: 'Biophilic Luxury',
-    desc: 'Textured roman shades, organic sage walls, living botanical olive tree, and warm brass accents.',
+    desc: 'Textured blinds, organic sage walls, living botanical foliage, and warm brass accents.',
     wallColor: '#7A9970',
     floorType: 'lightoak',
     sofaColor: '#ECE7DE',

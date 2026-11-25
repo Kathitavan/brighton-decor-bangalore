@@ -5,26 +5,29 @@ import { company } from '../../config/company';
 
 /**
  * InnovativeAddressBlock
- * Innovative address representation:
- * - Line 1: 2911B Cleveland Ave
- * - Line 2: Saskatoon, SK S7K 8A9 (with highlighted postal chip)
- * - 1-Click Clipboard copy for the full address or postal code with animated visual feedback
+ * - Line 1: 2nd 'C' Cross, Vinayaka Nagar
+ * - Line 2: Bangalore, Karnataka - 560030 (with highlighted pincode chip)
+ * - 1-Click Clipboard copy for full address or pincode
  * - Instant Google Maps navigation deep link
  */
 const InnovativeAddressBlock = ({
   variant = 'card', // 'card' | 'footer' | 'feature' | 'compact'
-  accentColor = '#52B788', // '#52B788' | '#C9A55A' | '#B89656' | 'currentColor'
+  accentColor = '#52B788',
   isLight = false,
   className = '',
 }) => {
   const [copied, setCopied] = useState(false);
   const [copiedPostal, setCopiedPostal] = useState(false);
 
-  const fullAddress = company.address.full || '2911B Cleveland Ave, Saskatoon, SK S7K 8A9';
-  const postalCode = company.address.postalCode || 'S7K 8A9';
-  const street = company.address.street || '2911B Cleveland Ave';
-  const cityProvince = `${company.address.city}, ${company.address.province}`;
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
+  const fullAddress =
+    company.address.full ||
+    "2nd 'C' Cross, Vinayaka Nagar, Bangalore, Karnataka - 560030, India";
+  const postalCode = company.address.pincode || company.address.postalCode || '560030';
+  const street = company.address.street || "2nd 'C' Cross, Vinayaka Nagar";
+  const cityState = `${company.address.city}, ${company.address.state}`;
+  const mapsUrl =
+    company.googleMapsUrl ||
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
   const handleCopyFull = (e) => {
     e.preventDefault();
@@ -46,7 +49,6 @@ const InnovativeAddressBlock = ({
     }
   };
 
-  // 1. FOOTER VARIANT
   if (variant === 'footer') {
     return (
       <div className={`space-y-2.5 font-sans ${className}`}>
@@ -57,11 +59,11 @@ const InnovativeAddressBlock = ({
               {street}
             </div>
             <div className={`flex items-center flex-wrap gap-1.5 pt-0.5 ${isLight ? 'text-[#2B1F17]/70' : 'text-white/70'}`}>
-              <span>{cityProvince}</span>
+              <span>{cityState}</span>
               <button
                 type="button"
                 onClick={handleCopyPostal}
-                title="Click to copy postal code"
+                title="Click to copy PIN code"
                 className={`group/pc inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[11px] font-mono tracking-wider transition-all duration-200 cursor-pointer ${
                   isLight
                     ? 'bg-[#2B1F17]/5 text-[#2B1F17] hover:bg-[#2B1F17]/10 border border-[#2B1F17]/15'
@@ -77,12 +79,11 @@ const InnovativeAddressBlock = ({
               </button>
             </div>
             <div className={`text-[11px] pt-0.5 ${isLight ? 'text-[#2B1F17]/50' : 'text-white/40'}`}>
-              {company.address.country}
+              {company.address.country} · Physical Showroom
             </div>
           </div>
         </div>
 
-        {/* Micro Action Buttons */}
         <div className="flex items-center gap-2 pl-6 pt-0.5">
           <button
             type="button"
@@ -122,7 +123,6 @@ const InnovativeAddressBlock = ({
     );
   }
 
-  // 2. FEATURE VARIANT (e.g. About Page / Highlighted Studio)
   if (variant === 'feature') {
     return (
       <div className={`p-6 rounded-2xl backdrop-blur-xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300 relative group ${className}`}>
@@ -142,25 +142,24 @@ const InnovativeAddressBlock = ({
             <div>
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-white/50 font-sans">
-                  Flagship Design Studio & Hub
+                  Bangalore Showroom &amp; HQ
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               </div>
 
-              {/* Exact 2-line layout */}
               <div className="font-serif text-white text-xl sm:text-2xl font-bold tracking-tight">
                 {street}
               </div>
 
               <div className="flex flex-wrap items-center gap-2 mt-1.5">
-                <span className="text-white/80 font-sans text-sm">{cityProvince}</span>
+                <span className="text-white/80 font-sans text-sm">{cityState}</span>
                 <button
                   type="button"
                   onClick={handleCopyPostal}
-                  title="Click to copy Canadian postal code"
+                  title="Click to copy PIN code"
                   className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-white/10 hover:bg-white/20 border border-white/20 text-white font-mono text-xs font-semibold tracking-wider transition-all duration-200 cursor-pointer shadow-sm group/btn"
                 >
-                  <span className="text-xs">🇨🇦</span>
+                  <span className="text-xs">🇮🇳</span>
                   <span>{postalCode}</span>
                   {copiedPostal ? (
                     <Check size={11} className="text-emerald-400" />
@@ -168,12 +167,11 @@ const InnovativeAddressBlock = ({
                     <Copy size={11} className="text-white/50 group-hover/btn:text-white transition-colors" />
                   )}
                 </button>
-                <span className="text-white/40 text-xs font-sans">· Canada</span>
+                <span className="text-white/40 text-xs font-sans">· India</span>
               </div>
             </div>
           </div>
 
-          {/* Action CTAs */}
           <div className="flex sm:flex-col items-center sm:items-end gap-2.5 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/10">
             <button
               type="button"
@@ -213,14 +211,13 @@ const InnovativeAddressBlock = ({
         {copied && (
           <div className="mt-3 text-[11px] text-emerald-400 font-sans flex items-center gap-1.5">
             <Check size={12} />
-            <span>Full address copied to clipboard: "{fullAddress}"</span>
+            <span>Full address copied to clipboard: &ldquo;{fullAddress}&rdquo;</span>
           </div>
         )}
       </div>
     );
   }
 
-  // 3. CARD VARIANT (Default — Contact Page Sidebar, etc.)
   return (
     <div className={`p-5 rounded-2xl backdrop-blur-xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300 ${className}`}>
       <div className="flex items-start gap-4">
@@ -238,25 +235,24 @@ const InnovativeAddressBlock = ({
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2 mb-1">
             <span className="text-[10px] uppercase tracking-[0.2em] text-white/50 font-sans font-semibold">
-              Flagship Office
+              Office &amp; Physical Showroom
             </span>
             <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-[9px] font-mono font-medium border border-emerald-500/30">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Saskatoon Hub
+              Bangalore HQ
             </span>
           </div>
 
-          {/* Exact 2-line structure matching screenshot */}
           <div className="font-serif text-white text-base sm:text-lg font-bold leading-tight">
             {street}
           </div>
 
           <div className="flex flex-wrap items-center gap-2 mt-1">
-            <span className="text-white/80 font-sans text-xs sm:text-sm">{cityProvince}</span>
+            <span className="text-white/80 font-sans text-xs sm:text-sm">{cityState}</span>
             <button
               type="button"
               onClick={handleCopyPostal}
-              title="Click to copy postal code"
+              title="Click to copy PIN code"
               className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 border border-white/20 text-white font-mono text-[11px] font-semibold tracking-wider transition-all duration-200 cursor-pointer group/chip"
             >
               <span>{postalCode}</span>
@@ -268,7 +264,6 @@ const InnovativeAddressBlock = ({
             </button>
           </div>
 
-          {/* Innovative Quick Action Bar */}
           <div className="flex items-center gap-3 mt-3 pt-3 border-t border-white/10">
             <button
               type="button"

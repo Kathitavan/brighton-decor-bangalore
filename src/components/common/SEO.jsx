@@ -3,8 +3,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const DEFAULT_IMAGE = 'https://brightondecor.co/assets/imgs/main%20logo.png';
-const BASE_URL = 'https://brightondecor.co';
+const DEFAULT_IMAGE = 'https://brightondecor.in/assets/imgs/main%20logo.png';
+const BASE_URL = 'https://brightondecor.in';
 
 export default function SEO({
   title,
@@ -17,15 +17,13 @@ export default function SEO({
   const location = useLocation();
   const fullUrl = `${BASE_URL}${location.pathname}`;
   const canonicalUrl = canonical || fullUrl;
-  const siteTitle = title 
-    ? `${title} | Brighton Decor Ltd` 
-    : 'Brighton Decor Ltd | Window Blinds, Custom Drapery & Motorized Shading — Saskatoon, SK';
+  const siteTitle = title
+    ? `${title} | Brighton Decor — Bangalore`
+    : 'Brighton Decor — Luxury Window Blinds, Dream Curtains & Drapery | Bangalore';
 
   useEffect(() => {
-    // 1. Page Title
     document.title = siteTitle;
 
-    // Helper to create or update meta tags
     const setMetaTag = (attrName, attrValue, content) => {
       if (!content) return;
       let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
@@ -37,24 +35,20 @@ export default function SEO({
       el.setAttribute('content', content);
     };
 
-    // 2. Primary Meta Description
     if (description) {
       setMetaTag('name', 'description', description);
     }
 
-    // 3. Open Graph Tags
     setMetaTag('property', 'og:title', siteTitle);
     if (description) setMetaTag('property', 'og:description', description);
     setMetaTag('property', 'og:url', canonicalUrl);
     setMetaTag('property', 'og:type', ogType);
     setMetaTag('property', 'og:image', ogImage);
 
-    // 4. Twitter Card Tags
     setMetaTag('name', 'twitter:title', siteTitle);
     if (description) setMetaTag('name', 'twitter:description', description);
     setMetaTag('name', 'twitter:image', ogImage);
 
-    // 5. Canonical Link
     let canonicalEl = document.querySelector('link[rel="canonical"]');
     if (!canonicalEl) {
       canonicalEl = document.createElement('link');
@@ -63,7 +57,6 @@ export default function SEO({
     }
     canonicalEl.setAttribute('href', canonicalUrl);
 
-    // 6. JSON-LD Structured Data Schema (if supplied)
     let schemaScript = document.getElementById('page-structured-data');
     if (schema) {
       if (!schemaScript) {
@@ -78,7 +71,6 @@ export default function SEO({
     }
 
     return () => {
-      // Clean up dynamic schema on unmount if route changes
       const s = document.getElementById('page-structured-data');
       if (s) s.remove();
     };

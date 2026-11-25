@@ -1452,13 +1452,13 @@ const Immersive3DShowcase = () => {
     <section
       ref={containerRef}
       id="the-window"
-      className="relative bg-[#0A0908] select-none"
+      className="relative bg-[#080c18] select-none border-t border-[#E5D399]/15"
       style={{ height: '460vh', position: 'relative' }}
-      aria-label="Cinematic Window Experience — scroll to transform"
+      aria-label="The 3D Interactive Room Studio — scroll to transform"
     >
       {/* Accessible screen-reader narrative */}
       <div className="sr-only">
-        <h2>The Window — Cinematic Light and Privacy Transformation</h2>
+        <h2>The 3D Interactive Room Studio — Light and Privacy Transformation</h2>
         <ol>
           <li>Beat 1: Bare architectural window with raw daylight streaming through clean glass. Transform your window. Designed for the way you live.</li>
           <li>Beat 2: Translucent sheer linen drapery glides in to soften and gently scatter the daylight.</li>
@@ -1469,8 +1469,25 @@ const Immersive3DShowcase = () => {
         </ol>
       </div>
 
-      {/* Sticky viewport container (pins smoothly for 460vh, releases cleanly into Products) */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden" style={{ willChange: 'transform' }}>
+      {/* Sticky viewport container (pins smoothly for 460vh, releases cleanly into Section 5) */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#080c18]" style={{ willChange: 'transform' }}>
+        {/* Midnight Sapphire & Platinum Gold Interactive Header Bar */}
+        <div className="absolute top-20 sm:top-24 left-6 right-6 z-30 flex flex-wrap items-center justify-between gap-3 pointer-events-none">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#080c18]/80 backdrop-blur-xl border border-[#E5D399]/35 text-[10px] uppercase font-bold tracking-[0.22em] text-[#E5D399]">
+            <span className="w-2 h-2 rounded-full bg-[#E5D399] animate-pulse" />
+            <span>Midnight Sapphire · 3D Interactive Studio</span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => navigate('/room-viewer')}
+            className="pointer-events-auto inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E5D399] hover:bg-white text-[#080c18] text-[10px] font-bold uppercase tracking-[0.2em] shadow-[0_8px_25px_rgba(229,211,153,0.3)] transition-all"
+          >
+            <span>Open Full 3D Configurator</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
         {/* 3D WebGL Canvas Layer — Mounted immediately with 0 blank delay */}
         <div className="absolute inset-0 z-0">
           <Canvas
@@ -1484,6 +1501,7 @@ const Immersive3DShowcase = () => {
               toneMappingExposure: 1.12,
             }}
           >
+            <color attach="background" args={['#080c18']} />
             <PerspectiveCamera
               makeDefault
               position={[0, 2.42, isMobile ? 9.8 : 7.5]}
@@ -1495,12 +1513,12 @@ const Immersive3DShowcase = () => {
           </Canvas>
         </div>
 
-        {/* Film-like soft vignette overlay (ensures contrast & cinematic aesthetic) */}
+        {/* Midnight Sapphire Vignette Overlay */}
         <div
           className="absolute inset-0 pointer-events-none z-10"
           aria-hidden="true"
           style={{
-            background: 'radial-gradient(ellipse at 50% 50%, transparent 32%, rgba(10,9,8,0.78) 100%)',
+            background: 'radial-gradient(ellipse at 50% 50%, transparent 32%, rgba(8,12,24,0.82) 100%)',
           }}
         />
 

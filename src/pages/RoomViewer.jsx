@@ -253,7 +253,7 @@ const RoomViewer = () => {
                   Window Treatments Studio
                 </span>
                 <span className="text-[9px] text-white/50">
-                  Custom blinds & architectural drapery crafted in Saskatoon
+                  Custom blinds &amp; drapery crafted in Bangalore
                 </span>
               </div>
               <span className="text-[8px] bg-[#C9A55A]/20 border border-[#C9A55A]/40 text-[#C9A55A] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
@@ -285,7 +285,7 @@ const RoomViewer = () => {
                   },
                   {
                     name: '🪵 Hardwood Venetian',
-                    desc: 'Natural Canadian wood slats & tapes',
+                    desc: 'Natural wooden slats & decorative tapes',
                     cfg: { blindType: 'wooden', blindOpen: 0.25, curtainColor: 'none' },
                   },
                   {
@@ -674,7 +674,7 @@ const RoomViewer = () => {
         return (
           <div className="space-y-5">
             <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C9A55A] block">
-              Canadian Flooring Surfaces
+              Architectural Flooring Surfaces
             </span>
             <div className="grid grid-cols-3 gap-2.5">
               {[
@@ -949,8 +949,8 @@ const RoomViewer = () => {
   return (
     <PageTransition>
       <SEO
-        title="3D Room Studio — Interactive Window & Flooring Configurator"
-        description="Experience your dream Canadian living room in photorealistic 3D. Customize roller, zebra, honeycomb, and vertical blinds with flooring, walls, and lighting in real time."
+        title="3D Room Studio — Interactive Window & Drapery Configurator | Bangalore"
+        description="Preview your Bangalore living room in photorealistic 3D. Customize Roller, Zebra, Honeycomb, Wooden, Vertical & PVC blinds alongside drapery, walls, and lighting in real time."
       />
       <div className="flex flex-col h-screen w-full overflow-hidden bg-[#0A0908] text-white">
         {/* Top Header Bar */}
@@ -1332,7 +1332,7 @@ const RoomViewer = () => {
                     }}
                     className="flex-1 bg-[#C9A55A] hover:bg-white text-[#0A0908] py-3 rounded-xl text-xs uppercase font-bold tracking-wider transition-all"
                   >
-                    Get Free Quote →
+                    Get Custom Quote →
                   </button>
                 </div>
               </motion.div>

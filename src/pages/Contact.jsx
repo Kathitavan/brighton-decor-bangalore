@@ -49,8 +49,8 @@ const Contact = () => {
     } else if (determinedType === 'quote') {
       setFormState((prev) => ({
         ...prev,
-        service: state.category ? `${state.category} Quote` : 'Product Price Quote',
-        message: state.message || `Price quote inquiry for: ${state.productName || 'Custom Product'}${state.productId ? ` (${state.productId})` : ''}${state.finish ? ` in ${state.finish} finish` : ''}.`,
+        service: state.category ? `${state.category} Custom Quote` : 'Custom Architectural Quote',
+        message: state.message || `Custom quote inquiry for: ${state.productName || 'Window Solution'}${state.productId ? ` (${state.productId})` : ''}${state.finish ? ` in ${state.finish} finish` : ''}. Please schedule a free Bangalore site measurement.`,
       }));
     } else if (determinedType === 'measurement') {
       setFormState((prev) => ({
@@ -101,7 +101,7 @@ const Contact = () => {
       setSubmitted(true);
     } catch (err) {
       console.error('[Lead Submission Error]:', err);
-      setError(err.message || 'Unable to submit your request. Please call us directly at +1 (306) 580-6476.');
+      setError(err.message || `Unable to submit your request. Please call or WhatsApp us directly at ${company.phone}.`);
     } finally {
       setLoading(false);
     }
@@ -110,8 +110,8 @@ const Contact = () => {
   return (
     <PageTransition>
       <SEO
-        title="Book a Free Site Measurement & Consultation"
-        description="Schedule your complimentary zero-cost, no-obligation window measurement and custom window decor consultation with Brighton Decor Ltd in Saskatoon, SK. Call +1 (306) 580-6476."
+        title="Book a Free Site Measurement & Visit Our Bangalore Showroom"
+        description={`Schedule your 100% free site measurement and custom quote with Brighton Decor Private Limited in Vinayaka Nagar, Bangalore. Call or WhatsApp ${company.phone}.`}
       />
       <div className={styles.contactPage}>
         
@@ -132,7 +132,7 @@ const Contact = () => {
                 <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#52B788]/18 border border-[#52B788]/40 mb-6">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#52B788] animate-pulse" />
                   <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#52B788] font-sans">
-                    Saskatoon Concierge & Site Measurement
+                    Bangalore Concierge &amp; Physical Showroom
                   </span>
                 </div>
 
@@ -145,22 +145,21 @@ const Contact = () => {
                 </h1>
 
                 <p className="text-white/80 text-lg md:text-xl font-sans font-light leading-relaxed max-w-xl drop-shadow-md">
-                  Reach out to book a complimentary in-home site measurement or visit our 
-                  flagship office in Saskatoon. We provide personal, tailored service across Canada.
+                  Book a 100% free on-site measurement anywhere in Bangalore, or visit our physical showroom in Vinayaka Nagar (open Mon–Sun, 10 AM – 8 PM).
                 </p>
               </div>
 
-              {/* Saskatoon Local Time & Availability Badge */}
+              {/* Bangalore Local Time & Availability Badge */}
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3 p-5 rounded-2xl bg-[#0A120E]/90 border border-[#52B788]/30 backdrop-blur-xl max-w-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-[#52B788] animate-ping" />
-                  <span className="text-xs font-sans text-white font-bold">Concierge Team Available</span>
+                  <span className="text-xs font-sans text-white font-bold">Showroom &amp; Team Open Today</span>
                 </div>
                 <div className="text-[11px] font-mono text-[#52B788]">
-                  Saskatoon, SK · CST Time Zone
+                  Bangalore, Karnataka · 10 AM – 8 PM IST
                 </div>
                 <div className="text-[10px] uppercase tracking-wider text-white/50 font-sans border-t border-white/10 pt-2 mt-1">
-                  1 Business Day Response Guaranteed
+                  GST: {company.gst} · 3–4 Days Delivery
                 </div>
               </div>
             </motion.div>
@@ -211,7 +210,17 @@ const Contact = () => {
                     >
                       {company.phone}
                     </a>
-                    <span className="text-[11px] text-white/50 font-sans">Mon–Sat: 9 AM – 6 PM</span>
+                    <div className="flex items-center gap-3 mt-1">
+                      <span className="text-[11px] text-white/50 font-sans">Mon–Sun: 10 AM – 8 PM</span>
+                      <a
+                        href={company.whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#52B788]/20 text-[#52B788] border border-[#52B788]/40 hover:bg-[#52B788] hover:text-[#0A120E] transition-colors"
+                      >
+                        WhatsApp Chat
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -222,7 +231,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-[10px] uppercase tracking-[0.2em] text-white/60 font-sans font-semibold mb-1">
-                      Direct Email
+                      Direct &amp; Sales Email
                     </div>
                     <a
                       href={`mailto:${company.email}`}
@@ -230,7 +239,12 @@ const Contact = () => {
                     >
                       {company.email}
                     </a>
-                    <span className="text-[11px] text-white/50 font-sans">Fast Response Guaranteed</span>
+                    <a
+                      href={`mailto:${company.salesEmail}`}
+                      className="text-xs text-[#52B788] hover:underline font-sans block mt-0.5"
+                    >
+                      Sales: {company.salesEmail}
+                    </a>
                   </div>
                 </div>
 
@@ -248,11 +262,14 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-[10px] uppercase tracking-[0.2em] text-white/60 font-sans font-semibold mb-1">
-                      Operating Hours
+                      Showroom &amp; Operating Hours
                     </div>
                     <div className="font-serif text-white text-base">
-                      {company.hours.weekdays}: {company.hours.time}
+                      {company.hours}
                     </div>
+                    <span className="text-[11px] text-white/50 font-sans">
+                      Accepted: UPI (GPay / PhonePe / Paytm), Cash, NEFT/RTGS/IMPS, Cheque
+                    </span>
                   </div>
                 </div>
 
@@ -305,11 +322,11 @@ const Contact = () => {
 
                     <h3 className="font-serif text-white text-3xl font-bold mb-3">Request Confirmed!</h3>
                     <p className="text-white/80 text-base font-sans font-light max-w-md mx-auto leading-relaxed mb-4">
-                      Thank you for choosing Brighton Decor Ltd. A confirmation receipt has been dispatched to{' '}
+                      Thank you for choosing Brighton Decor Private Limited. A confirmation receipt has been dispatched to{' '}
                       <strong className="text-[#52B788]">{formState.email}</strong>.
                     </p>
                     <p className="text-white/60 text-xs font-sans max-w-sm mx-auto mb-8">
-                      Our Saskatoon design concierge will contact you within 1 business day to confirm your details.
+                      Our Bangalore design concierge will contact you promptly to confirm your free on-site measurement.
                     </p>
                     <button
                       onClick={() => {
@@ -333,7 +350,7 @@ const Contact = () => {
                         </span>
                       </div>
                       <span className="text-[10px] uppercase font-mono tracking-wider text-white/60 hidden sm:inline">
-                        Saskatoon Hub
+                        Bangalore HQ
                       </span>
                     </div>
 
@@ -343,9 +360,9 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-serif text-white text-2xl font-bold">
-                          {leadType === '3d_studio' ? 'Finalize Your 3D Look' : (leadType === 'quote' ? 'Request Product Quote' : (leadType === 'team' ? 'Connect With Our Team' : 'Book Free Site Measurement'))}
+                          {leadType === '3d_studio' ? 'Finalize Your 3D Look' : (leadType === 'quote' ? 'Get Custom Quote' : (leadType === 'team' ? 'Connect With Our Team' : 'Book Free Site Measurement'))}
                         </h3>
-                        <p className="text-white/60 text-xs font-sans">Zero cost · Professional measurement · Guaranteed precision</p>
+                        <p className="text-white/60 text-xs font-sans">100% Free Bangalore visit · ₹250 nominal install · 3–4 days delivery</p>
                       </div>
                     </div>
 
@@ -411,7 +428,7 @@ const Contact = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <label htmlFor="contact-phone" className="text-[11px] uppercase tracking-[0.2em] text-white/70 font-sans font-bold">
-                            Phone Number
+                            Phone / WhatsApp Number
                           </label>
                           <input
                             id="contact-phone"
@@ -419,7 +436,7 @@ const Contact = () => {
                             type="tel"
                             value={formState.phone}
                             onChange={handleChange}
-                            placeholder="+1 (306) 000-0000"
+                            placeholder="+91 97318 01476"
                             className={styles.formInput}
                           />
                         </div>
@@ -436,20 +453,19 @@ const Contact = () => {
                             className={styles.formInput}
                           >
                             <option value="" className="bg-[#0A120E] text-white">Select a service...</option>
-                            <option className="bg-[#0A120E] text-white">Window Blinds & Custom Room Look</option>
-                            <option className="bg-[#0A120E] text-white">Window Blinds (Roller, Zebra, Honeycomb)</option>
-                            <option className="bg-[#0A120E] text-white">Custom Drapery & Curtains</option>
-                            <option className="bg-[#0A120E] text-white">Smart Motorized Shading & Automation</option>
-                            <option className="bg-[#0A120E] text-white">Luxury Flooring</option>
-                            <option className="bg-[#0A120E] text-white">Full Home Window Treatment Package</option>
-                            <option className="bg-[#0A120E] text-white">Free Site Measurement & Consultation</option>
+                            <option className="bg-[#0A120E] text-white">Dream Curtains (Walk-Through Sheer System)</option>
+                            <option className="bg-[#0A120E] text-white">Window Blinds (Roller, Zebra, Honeycomb, Wooden, Vertical, PVC)</option>
+                            <option className="bg-[#0A120E] text-white">Custom Drapery &amp; Curtains</option>
+                            <option className="bg-[#0A120E] text-white">Smart Motorized Shading (Somfy / Tuya)</option>
+                            <option className="bg-[#0A120E] text-white">Window Blinds &amp; Custom Room Look</option>
+                            <option className="bg-[#0A120E] text-white">Free Site Measurement &amp; Consultation</option>
                           </select>
                         </div>
                       </div>
 
                       <div className="space-y-2">
                         <label htmlFor="contact-message" className="text-[11px] uppercase tracking-[0.2em] text-white/70 font-sans font-bold">
-                          Tell Us About Your Home Project
+                          Tell Us About Your Bangalore Project
                         </label>
                         <textarea
                           id="contact-message"
@@ -457,7 +473,7 @@ const Contact = () => {
                           rows={4}
                           value={formState.message}
                           onChange={handleChange}
-                          placeholder="Number of windows, room types, preferred style, estimated timeframe..."
+                          placeholder="Locality (e.g. Indiranagar, Whitefield, HSR), number of windows, preferred motorization (Somfy/Tuya)..."
                           className={`${styles.formInput} resize-none`}
                         />
                       </div>
@@ -478,7 +494,7 @@ const Contact = () => {
                             <>
                               <span>
                                 {leadType === 'quote'
-                                  ? 'Request Price Quote'
+                                  ? 'Get Custom Quote'
                                   : (leadType === 'team'
                                     ? 'Connect With Design Team'
                                     : 'Confirm Measurement Booking')}
@@ -489,12 +505,12 @@ const Contact = () => {
                         </span>
                       </button>
 
-                      <div className="flex items-center justify-center gap-6 pt-2 text-[#52B788] text-[11px] font-sans">
+                      <div className="flex flex-wrap items-center justify-center gap-5 pt-2 text-[#52B788] text-[11px] font-sans">
                         <span className="flex items-center gap-1.5">
-                          <ShieldCheck size={14} /> Free Site Measurement
+                          <ShieldCheck size={14} /> Free Bangalore Measurement
                         </span>
                         <span className="flex items-center gap-1.5">
-                          <CheckCircle2 size={14} /> No Obligation Quote
+                          <CheckCircle2 size={14} /> 5–7 Years Warranty
                         </span>
                       </div>
                     </form>

@@ -218,20 +218,20 @@ const Navbar = () => {
                                 <Sparkles size={16} className="text-[#C9A55A]" />
                                 <div>
                                   <h4 className="font-serif text-base text-white font-medium tracking-wide">
-                                    Window Coverings & Flooring
+                                    Dream Curtains &amp; Window Blinds
                                   </h4>
                                   <p className="text-[10px] text-white/50 font-sans tracking-wider uppercase">
-                                    Bespoke Architectural Shading & Canadian Flooring
+                                    Walk-Through Sheers, Blinds &amp; Somfy/Tuya Automation
                                   </p>
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
                                 <Link
-                                  to="/services#flooring"
+                                  to="/services#dream-curtains"
                                   onClick={() => setShowMegaMenu(false)}
                                   className="text-[10px] font-sans font-bold uppercase tracking-[0.16em] text-[#C9A55A] hover:text-white transition-colors px-2.5 py-1 rounded bg-[#C9A55A]/10 border border-[#C9A55A]/30"
                                 >
-                                  Flooring
+                                  Dream Curtains
                                 </Link>
                                 <Link
                                   to="/products"
@@ -288,7 +288,7 @@ const Navbar = () => {
                             {/* Bottom Consultation Ribbon */}
                             <div className="mt-5 pt-3.5 border-t border-white/10 flex items-center justify-between text-[11px] text-white/70">
                               <span className="font-sans font-light">
-                                Serving Saskatoon & Area · Laser Precision Guaranteed
+                                Vinayaka Nagar Showroom, Bangalore · 100% Free Site Measurement
                               </span>
                               <Link
                                 to="/contact"
@@ -451,7 +451,7 @@ const Navbar = () => {
                               </button>
                             ))}
                             <Link
-                              to="/services#flooring"
+                              to="/services#dream-curtains"
                               onClick={() => {
                                 setIsOpen(false);
                                 document.body.classList.remove('menu-open');
@@ -460,13 +460,13 @@ const Navbar = () => {
                             >
                               <div className="flex items-center gap-2.5">
                                 <img
-                                  src="/assets/imgs/products/hardwood-flooring.jpg"
-                                  alt="Flooring"
+                                  src="/assets/imgs/decore/living-room-custom-drapery.jpg"
+                                  alt="Dream Curtains"
                                   className="w-10 h-8 rounded object-cover"
                                 />
                                 <div>
-                                  <div className="text-xs font-serif font-medium text-[#C9A55A]">Flooring Collection</div>
-                                  <div className="text-[9px] text-current/60 uppercase">Hardwood, Vinyl & Laminate</div>
+                                  <div className="text-xs font-serif font-medium text-[#C9A55A]">Dream Curtains</div>
+                                  <div className="text-[9px] text-current/60 uppercase">Walk-Through Sheer Drapery</div>
                                 </div>
                               </div>
                               <ArrowRight size={14} className="text-[#C9A55A]" />

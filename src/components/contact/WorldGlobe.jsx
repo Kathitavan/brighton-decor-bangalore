@@ -3,8 +3,8 @@ import React, { useRef, useState, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html, Float, Stars, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
+import { company } from '../../config/company';
 
-// 1. Math Helper: Convert Lat/Long coordinates to 3D Cartesian Vector3
 export function latLongToVector3(lat, lon, radius = 2.0) {
   const phi = (90 - lat) * (Math.PI / 180);
   const theta = (lon + 180) * (Math.PI / 180);
@@ -14,7 +14,6 @@ export function latLongToVector3(lat, lon, radius = 2.0) {
   return new THREE.Vector3(x, y, z);
 }
 
-// 2. Texture CDN URLs with high reliability
 const TEXTURES = {
   day: 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg',
   normal: 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_normal_2048.jpg',
@@ -22,14 +21,12 @@ const TEXTURES = {
   specular: 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_specular_2048.jpg',
 };
 
-// 3. Photorealistic 3D Earth Globe Inner Component
 function PhotorealisticEarth({ onPinClick }) {
   const globeGroupRef = useRef();
   const cloudsRef = useRef();
   const ringRef = useRef();
   const [hovered, setHovered] = useState(false);
 
-  // Load high-resolution PBR textures
   const [dayMap, normalMap, cloudsMap, specularMap] = useTexture([
     TEXTURES.day,
     TEXTURES.normal,
@@ -37,19 +34,18 @@ function PhotorealisticEarth({ onPinClick }) {
     TEXTURES.specular,
   ]);
 
-  // Saskatoon, Saskatchewan Coordinates: 52.1332° N, -106.6346° W
-  const saskatoonPos = React.useMemo(() => latLongToVector3(52.1332, -106.6346, 2.02), []);
+  // Bangalore, Karnataka Coordinates: 12.9610° N, 77.6068° E
+  const bangalorePos = React.useMemo(() => latLongToVector3(12.961, 77.6068, 2.02), []);
   const pinRotation = React.useMemo(() => {
-    const normal = saskatoonPos.clone().normalize();
+    const normal = bangalorePos.clone().normalize();
     const up = new THREE.Vector3(0, 1, 0);
     const q = new THREE.Quaternion();
     q.setFromUnitVectors(up, normal);
     const euler = new THREE.Euler();
     euler.setFromQuaternion(q);
     return euler;
-  }, [saskatoonPos]);
+  }, [bangalorePos]);
 
-  // Frame Animations: Independent Cloud & Pulse Ring Rotation
   useFrame((state, delta) => {
     if (globeGroupRef.current && !hovered) {
       globeGroupRef.current.rotation.y += delta * 0.08;
@@ -66,8 +62,6 @@ function PhotorealisticEarth({ onPinClick }) {
 
   return (
     <group ref={globeGroupRef}>
-      
-      {/* 1. Base Earth Surface Layer (Radius 2.0) */}
       <mesh receiveShadow castShadow>
         <sphereGeometry args={[2, 64, 64]} />
         <meshStandardMaterial
@@ -80,7 +74,6 @@ function PhotorealisticEarth({ onPinClick }) {
         />
       </mesh>
 
-      {/* 2. Dynamic Volumetric Cloud Layer (Radius 2.02) */}
       <mesh ref={cloudsRef} scale={1.01}>
         <sphereGeometry args={[2, 64, 64]} />
         <meshStandardMaterial
@@ -92,7 +85,6 @@ function PhotorealisticEarth({ onPinClick }) {
         />
       </mesh>
 
-      {/* 3. Atmospheric Rayleigh Scattering Glow (Radius 2.15) */}
       <mesh scale={1.075}>
         <sphereGeometry args={[2, 32, 32]} />
         <meshBasicMaterial
@@ -103,9 +95,9 @@ function PhotorealisticEarth({ onPinClick }) {
         />
       </mesh>
 
-      {/* 4. Saskatoon Location Marker Pin (3D Cone & Pulse Rings) */}
+      {/* Bangalore Location Marker Pin */}
       <group
-        position={saskatoonPos}
+        position={bangalorePos}
         rotation={pinRotation}
         onPointerOver={() => {
           setHovered(true);
@@ -120,7 +112,6 @@ function PhotorealisticEarth({ onPinClick }) {
           onPinClick();
         }}
       >
-        {/* Sleek 3D Brass/Gold Pin Cone */}
         <mesh position={[0, 0.12, 0]} scale={hovered ? 1.3 : 1.0}>
           <coneGeometry args={[0.04, 0.24, 16]} />
           <meshStandardMaterial
@@ -132,7 +123,6 @@ function PhotorealisticEarth({ onPinClick }) {
           />
         </mesh>
 
-        {/* Pin Head Sphere */}
         <mesh position={[0, 0.24, 0]} scale={hovered ? 1.3 : 1.0}>
           <sphereGeometry args={[0.05, 16, 16]} />
           <meshStandardMaterial
@@ -142,7 +132,6 @@ function PhotorealisticEarth({ onPinClick }) {
           />
         </mesh>
 
-        {/* Animated Expanding Ripple Ring */}
         <mesh ref={ringRef} rotation={[-Math.PI / 2, 0, 0]}>
           <ringGeometry args={[0.06, 0.12, 32]} />
           <meshBasicMaterial
@@ -153,7 +142,6 @@ function PhotorealisticEarth({ onPinClick }) {
           />
         </mesh>
 
-        {/* Floating Interactive 3D HTML Label Overlay */}
         <Html distanceFactor={8} position={[0.2, 0.35, 0]}>
           <div
             onClick={(e) => {
@@ -167,26 +155,24 @@ function PhotorealisticEarth({ onPinClick }) {
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2.5 h-2.5 rounded-full bg-[#52B788] animate-ping" />
               <span className="font-serif font-bold text-[#52B788] text-xs">
-                Brighton Decor — 2911B Cleveland Ave
+                Brighton Decor — Vinayaka Nagar
               </span>
             </div>
             <div className="flex items-center justify-between gap-3">
               <span className="text-[10px] text-white/90 font-sans">
-                Saskatoon, SK <strong className="font-mono text-[#52B788] font-bold">S7K 8A9</strong>
+                Bangalore, KA <strong className="font-mono text-[#52B788] font-bold">560030</strong>
               </span>
               <span className="text-[9px] font-bold uppercase tracking-wider bg-[#52B788]/20 text-[#52B788] px-2 py-0.5 rounded-full border border-[#52B788]/40">
-                Flagship Office ➔
+                Showroom &amp; HQ ➔
               </span>
             </div>
           </div>
         </Html>
       </group>
-
     </group>
   );
 }
 
-// 4. Skeleton Loader for Suspense Fallback
 function GlobeSkeletonLoader() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center bg-[#0A120E] text-white">
@@ -198,45 +184,36 @@ function GlobeSkeletonLoader() {
   );
 }
 
-// 5. Main Export Component
 const WorldGlobe = () => {
   const handleOpenGoogleMaps = () => {
-    window.open("https://www.google.com/maps/search/?api=1&query=2911B+Cleveland+Ave%2C+Saskatoon%2C+SK+S7K+8A9", "_blank", "noopener,noreferrer");
+    window.open(company.googleMapsUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
     <div className="relative w-full h-[440px] md:h-[540px] rounded-3xl overflow-hidden border border-[#52B788]/35 bg-gradient-to-b from-[#0A120E] via-[#0E1E17] to-[#0A120E] backdrop-blur-2xl shadow-[0_30px_90px_rgba(0,0,0,0.85)]">
-      
-      {/* Header Badge */}
       <div className="absolute top-6 left-6 z-10 pointer-events-none">
         <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/60 border border-[#52B788]/40 backdrop-blur-md">
           <div className="w-2.5 h-2.5 rounded-full bg-[#52B788] animate-pulse" />
           <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#52B788] font-sans">
-            Photorealistic 3D Earth · Click Pin for Location
+            Bangalore HQ · Click Pin for Showroom
           </span>
         </div>
       </div>
 
-      {/* R3F Canvas Container */}
       <Suspense fallback={<GlobeSkeletonLoader />}>
         <Canvas
           camera={{ position: [0, 0, 5.2], fov: 45 }}
           gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         >
-          {/* Deep Space Background Stars */}
           <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade />
-
-          {/* Physically Based Lighting */}
           <ambientLight intensity={0.4} color="#0A0D14" />
           <directionalLight position={[5, 3, 5]} intensity={2.5} color="#FFF9E6" castShadow />
           <pointLight position={[-5, -3, -5]} intensity={0.6} color="#52B788" />
 
-          {/* Floating Subtle Motion */}
           <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.25}>
             <PhotorealisticEarth onPinClick={handleOpenGoogleMaps} />
           </Float>
 
-          {/* Interactive Orbit Controls */}
           <OrbitControls
             enablePan={false}
             minDistance={3.2}
@@ -249,14 +226,13 @@ const WorldGlobe = () => {
         </Canvas>
       </Suspense>
 
-      {/* Bottom Info Strip */}
       <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-black/80 border border-[#52B788]/35 backdrop-blur-xl">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-[#52B788]/20 border border-[#52B788]/50 flex items-center justify-center text-[#52B788] font-serif font-bold text-sm">
-            SK
+            BLR
           </div>
           <div>
-            <div className="text-white text-xs font-serif font-bold">Flagship Office & HQ</div>
+            <div className="text-white text-xs font-serif font-bold">Vinayaka Nagar Showroom &amp; HQ</div>
             <div className="text-white/60 text-[10px] font-sans">Click 3D Pin to Open Google Maps Directions</div>
           </div>
         </div>
@@ -269,7 +245,6 @@ const WorldGlobe = () => {
           <span>➔</span>
         </button>
       </div>
-
     </div>
   );
 };

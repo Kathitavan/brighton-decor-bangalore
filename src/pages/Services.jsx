@@ -11,32 +11,32 @@ import { ArrowRight, Layers, Grid, Hammer, Ruler, Frame, Lightbulb, CheckCircle2
 import styles from '../styles/pages/services.module.css';
 
 const trustStats = [
-  { value: '1,300+', label: 'Canadian Homes Transformed' },
-  { value: '4+', label: 'Years of Atelier Service' },
+  { value: '500+', label: 'Completed Projects' },
+  { value: '4+', label: 'Years Craftsmanship' },
   { value: '100%', label: 'Customer Satisfaction' },
-  { value: '1-Year', label: 'Workmanship Warranty' },
+  { value: '5–7 Yrs', label: 'Window Warranty' },
 ];
 
 const serviceBenefits = [
   {
     icon: Ruler,
-    title: 'Guaranteed Precise Fit',
-    description: 'Every window shade, blind, and flooring surface is laser-measured to within a millimeter before fabrication.',
+    title: '100% Free Site Measurement',
+    description: 'Complimentary laser measurement & 1m x 1m sample consultation anywhere in Bangalore before custom fabrication.',
   },
   {
     icon: Hammer,
-    title: 'Master Craftsmanship',
-    description: 'Our in-house master artisans securely anchor headrails, align drapes, and curate subfloor-ready timber.',
+    title: '₹250 Nominal Installation',
+    description: 'Trained technicians deliver dust-free, millimeter-accurate installation across Bangalore in 3–4 days lead time.',
   },
   {
     icon: Sun,
-    title: 'Optimal Light & Atmosphere',
-    description: 'Custom opacity levels from soft sheer illumination to 100% total room-darkening blackout, paired with warm floor tones.',
+    title: 'Dream Curtains & Somfy/Tuya',
+    description: 'Walk-through sheer vertical drapes and smart remote/app motorization options across all window solutions.',
   },
   {
     icon: Shield,
-    title: 'Canadian Climate Rated',
-    description: 'High-R insulation fabrics, thermal cellular shades, and humidity-stable hardwood timber designed for Canadian winters.',
+    title: '5–7 Years Warranty',
+    description: 'Long-term structural and hardware assurance built for Bangalore & South India residential and commercial spaces.',
   },
 ];
 
@@ -170,8 +170,8 @@ const Services = () => {
   return (
     <PageTransition>
       <SEO
-        title="Bespoke Window Decor & Luxury Flooring Services"
-        description="Explore custom window blinds, motorized coverings, bespoke drapery, and luxury flooring tailored for Canadian homes by Brighton Decor Ltd."
+        title="Dream Curtains, Custom Blinds & Motorized Shading Services — Bangalore"
+        description="Explore Dream Curtains, custom Roller, Zebra, Honeycomb, Wooden & PVC blinds, bespoke drapery, and Somfy/Tuya motorized shading in Bangalore by Brighton Decor Private Limited."
       />
       <div className={styles.servicesPage}>
         
@@ -206,8 +206,7 @@ const Services = () => {
 
               {/* Editorial Subtext */}
               <p className="text-white/75 text-lg md:text-xl font-sans font-light leading-relaxed max-w-2xl mb-10">
-                From precisely measured window blinds and custom drapery to beautifully finished flooring surfaces, 
-                Brighton Decor brings thoughtful decor, master craftsmanship and careful attention to every detail.
+                From flagship walk-through Dream Curtains and precision-measured window blinds to Somfy &amp; Tuya motorized drapery, Brighton Decor brings bespoke craftsmanship across Bangalore and South India.
               </p>
 
               {/* Action Buttons */}
@@ -370,10 +369,10 @@ const Services = () => {
                       </button>
 
                       <button
-                        onClick={() => navigate('/contact')}
+                        onClick={() => navigate('/contact', { state: { type: 'quote', productName: activeService.name } })}
                         className="text-xs font-sans text-white/70 hover:text-[#C9A55A] transition-colors flex items-center gap-1.5 font-bold"
                       >
-                        <span>Request Quote</span>
+                        <span>Get Custom Quote</span>
                         <ArrowRight size={14} />
                       </button>
                     </div>
@@ -536,7 +535,7 @@ const Services = () => {
               <span className="italic text-[#C9A55A]">unmistakably yours.</span>
             </h2>
             <p className="text-white/70 font-sans font-light text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-              Start with a free site measurement and discover what is possible for your home across Saskatoon and Canada.
+              Start with a 100% free site measurement and discover what is possible for your home across Bangalore, Karnataka &amp; South India.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">

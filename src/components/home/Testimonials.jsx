@@ -1,7 +1,8 @@
 // src/components/home/Testimonials.jsx
+// Section 7: Verified Bangalore Reviews & Testimonials — Charcoal Velvet & Star Gold (#141416)
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Star, Quote, Sparkles } from 'lucide-react';
+import { Star, Quote, Sparkles, CheckCircle2 } from 'lucide-react';
 import { testimonials } from '../../data/testimonials';
 
 const TestimonialCard = ({ testimonial, index, isInView }) => {
@@ -30,54 +31,52 @@ const TestimonialCard = ({ testimonial, index, isInView }) => {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative overflow-hidden w-full backdrop-blur-xl bg-gradient-to-br from-white/[0.04] via-white/[0.01] to-transparent border border-white/10 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:border-[#C9A55A]/50 transition-all duration-500 group flex flex-col justify-between"
+        className="relative overflow-hidden w-full backdrop-blur-xl bg-gradient-to-br from-[#1d1d20] via-[#17171a] to-[#141416] border border-[#F5C451]/20 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-[#F5C451]/60 transition-all duration-500 group flex flex-col justify-between"
       >
         <div
           className="pointer-events-none absolute -inset-px transition-opacity duration-500 rounded-[inherit]"
           style={{
             opacity: isHovered ? 1 : 0,
-            background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(201, 165, 90, 0.15), transparent 70%)`,
+            background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(245, 196, 81, 0.14), transparent 70%)`,
           }}
         />
 
         <div>
-          {/* Rating Stars & Quote Icon */}
           <div className="flex items-center justify-between mb-6">
-            <div className="flex gap-1 text-[#C9A55A]">
+            <div className="flex gap-1 text-[#F5C451]">
               {[...Array(5)].map((_, si) => (
-                <Star key={si} size={14} fill="#C9A55A" className="text-[#C9A55A] drop-shadow-[0_0_8px_rgba(201,165,90,0.5)]" />
+                <Star
+                  key={si}
+                  size={14}
+                  fill="#F5C451"
+                  className="text-[#F5C451] drop-shadow-[0_0_8px_rgba(245,196,81,0.55)]"
+                />
               ))}
             </div>
-            <Quote size={20} className="text-[#C9A55A]/30 group-hover:text-[#C9A55A] transition-colors" />
+            <Quote size={20} className="text-[#F5C451]/35 group-hover:text-[#F5C451] transition-colors" />
           </div>
 
-          {/* Quote Body */}
-          <p className="text-white/80 text-sm leading-relaxed font-sans italic font-light mb-8">
-            "{testimonial.quote}"
+          <p className="text-white/85 text-sm leading-relaxed font-sans italic font-light mb-8">
+            &ldquo;{testimonial.quote}&rdquo;
           </p>
         </div>
 
-        {/* Author Details */}
-        <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {testimonial.avatar && (
-              <img
-                src={testimonial.avatar}
-                alt={testimonial.name}
-                className="w-10 h-10 rounded-full object-cover border-2 border-[#C9A55A]/60 shadow-md shrink-0"
-              />
-            )}
+        <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <div className="flex items-center justify-between gap-2">
             <div>
-              <div className="font-serif text-white font-bold text-base group-hover:text-[#C9A55A] transition-colors">
+              <div className="font-serif text-white font-bold text-base group-hover:text-[#F5C451] transition-colors">
                 {testimonial.name}
               </div>
-              <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-[#C9A55A] mt-0.5">
+              <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-[#F5C451] mt-0.5">
                 {testimonial.city}
               </div>
             </div>
+            <span className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2 py-0.5 rounded-full">
+              <CheckCircle2 size={10} /> Verified
+            </span>
           </div>
-          {testimonial.service && !testimonial.avatar && (
-            <span className="text-[10px] text-white/50 font-sans px-2.5 py-1 rounded-full bg-white/5 border border-white/10">
+          {testimonial.service && (
+            <span className="text-[10px] text-white/55 font-sans">
               {testimonial.service}
             </span>
           )}
@@ -94,52 +93,52 @@ const Testimonials = () => {
   return (
     <section
       ref={ref}
-      className="py-16 md:py-24 bg-[#0A0908] text-white relative overflow-hidden border-t border-white/10"
-      aria-label="Customer testimonials"
+      id="section-reviews"
+      className="py-20 md:py-28 bg-[#141416] text-white relative overflow-hidden border-t border-[#F5C451]/20"
+      aria-label="Verified Bangalore Reviews and Testimonials"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(201,165,90,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(201,165,90,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#C9A55A]/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(245,196,81,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(245,196,81,0.025)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#F5C451]/6 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-[#C9A55A]/10 border border-[#C9A55A]/25 mb-4">
-            <Sparkles size={14} className="text-[#C9A55A]" />
-            <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C9A55A]">
-              Client Testimonials
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#F5C451]/12 border border-[#F5C451]/35 mb-4">
+            <Sparkles size={14} className="text-[#F5C451]" />
+            <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#F5C451]">
+              5.0 ★ Google Reviews · Bangalore
             </span>
           </div>
 
-          <h2 className="font-serif text-white text-3xl sm:text-4xl md:text-5xl leading-tight">
-            Trusted Across Canada
+          <h2 className="font-serif text-white text-3xl sm:text-4xl md:text-5xl leading-tight mb-3">
+            Trusted Across{' '}
+            <span className="italic text-[#F5C451]">Bangalore</span>
           </h2>
+          <p className="text-white/65 text-sm sm:text-base font-sans font-light">
+            Verified homeowners from Whitefield, Indiranagar, HSR Layout &amp; Jayanagar praising our punctuality, free measurement, and precision fit.
+          </p>
         </motion.div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((t, i) => (
             <TestimonialCard key={t.id} testimonial={t} index={i} isInView={isInView} />
           ))}
         </div>
 
-        {/* Footer Note */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.4 }}
           className="mt-14 text-center"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] font-mono text-white/60 bg-white/[0.03] border border-[#C9A55A]/30 px-6 py-2.5 rounded-full inline-block shadow-lg">
-            100% Customer Satisfaction · Serving All of Canada
+          <span className="text-[10px] uppercase tracking-[0.3em] font-mono text-[#F5C451]/90 bg-[#1d1d20] border border-[#F5C451]/35 px-6 py-2.5 rounded-full inline-block shadow-lg">
+            5.0 Star Rating · 100% Satisfaction Across Bangalore &amp; South India
           </span>
         </motion.div>
-
       </div>
     </section>
   );

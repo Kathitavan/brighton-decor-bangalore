@@ -1,111 +1,140 @@
 /**
- * Brighton Decor Ltd — Canada Client Configuration
- * Central source of truth for all Canada business information.
- * DO NOT mix with India/Bangalore client data.
+ * Brighton Decor Private Limited — Bangalore (India) HQ Configuration
+ * Central source of truth for all Bangalore business information.
  */
 
 export const company = {
-  name: 'Brighton Decor Ltd',
+  name: 'Brighton decor',
+  displayName: 'Brighton Decor',
+  legalName: 'Brighton Decor Private Limited',
   logo: '/assets/imgs/main logo.png',
-  tagline: 'Brightening Your Home. Defining Your Space.',
-  taglineShort: 'Brightening Your Home.',
+  tagline: 'Brightening your home',
+  taglineSubtitle: 'Defining Your Space',
+  taglineFull: 'Brightening your home. Defining Your Space.',
+  taglineShort: 'Brightening your home.',
   description:
-    'Thoughtfully selected window decor, expertly installed. From refined window blinds to luxurious custom drapery and motorized shades, Brighton Decor helps Canadian homes feel considered from every angle.',
+    'Thoughtfully engineered window blinds, Dream Curtains, custom drapery, and smart motorized shading crafted for luxury homes across Bangalore, Karnataka & South India.',
   established: 2022,
-  businessType: 'Proprietorship',
+  businessType: 'Private Limited',
+  gst: '29AAFCL7414BIZO',
 
   // Contact
-  phone: '+1 (306) 580-6476',
-  phoneRaw: '13065806476',
-  email: 'Shoieb@brightondecor.co',
-  whatsapp: '13065806476',
+  phone: '+91 9731801476',
+  phoneRaw: '919731801476',
+  whatsapp: '919731801476',
+  whatsappUrl: 'https://wa.me/919731801476',
+  email: 'Info@brightondecor.in',
+  salesEmail: 'Musaib@brightondecor.in',
 
-  // Address
+  // Address & Physical Showroom
+  showroom: true,
   address: {
-    street: '2911B Cleveland Ave',
-    line1: '2911B Cleveland Ave',
-    line2: 'Saskatoon, SK S7K 8A9',
-    city: 'Saskatoon',
-    province: 'SK',
-    postalCode: 'S7K 8A9',
-    country: 'Canada',
-    full: '2911B Cleveland Ave, Saskatoon, SK S7K 8A9',
-    short: 'Saskatoon, SK S7K 8A9',
+    street: "2nd 'C' Cross, Vinayaka Nagar",
+    line1: "2nd 'C' Cross, Vinayaka Nagar",
+    line2: 'Bangalore, Karnataka - 560030, India',
+    city: 'Bangalore',
+    state: 'Karnataka',
+    province: 'Karnataka',
+    pincode: '560030',
+    postalCode: '560030',
+    country: 'India',
+    full: "2nd 'C' Cross, Vinayaka Nagar, Bangalore, Karnataka - 560030, India",
+    short: 'Vinayaka Nagar, Bangalore - 560030',
   },
 
   // Hours
-  hours: {
-    weekdays: 'Monday – Friday',
-    time: '9:00 AM – 5:00 PM CST',
-    closed: 'Saturday & Sunday',
+  hours: 'Monday – Sunday: 10:00 AM – 8:00 PM',
+  hoursSchedule: {
+    weekdays: 'Monday – Sunday',
+    time: '10:00 AM – 8:00 PM',
+    closed: 'Open All 7 Days',
   },
 
   // Maps
-  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=2911B+Cleveland+Ave%2C+Saskatoon%2C+SK+S7K+8A9',
+  googleMapsUrl: 'https://maps.app.goo.gl/QdT4vWFgv841pQqJ8?g_st=ic',
+  googleMapsQuery: 'Vinayaka Nagar, Bangalore, Karnataka 560030',
   googleMapsEmbed:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.8!2d-106.6346!3d52.1332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDA3JzU5LjUiTiAxMDbCsDM4JzA0LjYiVw!5e0!3m2!1sen!2sca!4v1697000000000!5m2!1sen!2sca',
+    'https://maps.google.com/maps?q=Vinayaka%20Nagar%2C%20Bangalore%2C%20Karnataka%20560030&t=&z=15&ie=UTF8&iwloc=&output=embed',
 
-  // Social — update with verified client handle
+  // Social
+  instagram: 'https://www.instagram.com/brightondecor.in?igsh=MTVjdnJmemRwdWY=',
   social: {
-    instagram: 'https://www.instagram.com/brightondecor/',
+    instagram: 'https://www.instagram.com/brightondecor.in?igsh=MTVjdnJmemRwdWY=',
     facebook: '',
     linkedin: '',
   },
 
   // Service area
-  serviceArea: 'All across Canada',
-  primaryCity: 'Saskatoon, Saskatchewan',
+  serviceArea: 'Bangalore, Karnataka & South India',
+  primaryCity: 'Bangalore, Karnataka',
 
   // Trust statistics
   stats: {
-    homes: '1,300+',
+    projects: '500+',
+    homes: '500+',
     years: '4+',
     satisfaction: '100%',
-    warranty: '1 Year',
+    warranty: '5–7 Years',
+    leadTime: '3–4 Days',
   },
+
+  // Policies, Motorization & Payments
+  installationCharge: '₹250',
+  sampleDimensions: '1m x 1m & Bespoke Site Sizing',
+  motorBrands: ['Somfy', 'Tuya'],
+  paymentMethods: [
+    'UPI (GPay / PhonePe / Paytm)',
+    'Cash',
+    'Bank Transfer (NEFT / RTGS / IMPS)',
+    'Cheque',
+  ],
+  customOrderPolicy:
+    'Once order is placed, it is custom manufactured; no return or refund.',
+  pricingPolicy:
+    'All products are custom tailored to your window dimensions and selected motorization brand. Request a personalized quote after a free site measurement.',
 };
 
-// Services offered by the Canada client
-export const canadaServices = [
+// Services offered by Brighton Decor Bangalore HQ
+export const bangaloreServices = [
+  {
+    id: 'dream-curtains',
+    name: 'Dream Curtains',
+    shortDesc: 'Walk-through sheer vertical luxury drape system — the poetry of sheers with the privacy of blinds.',
+    icon: 'Sparkles',
+    path: '/services#dream-curtains',
+  },
   {
     id: 'blinds',
     name: 'Window Blinds',
-    shortDesc: 'Premium blinds in every style — roller, zebra, honeycomb, vertical, wooden, and PVC.',
+    shortDesc: 'Precision-engineered Roller, Zebra, Honeycomb, Wooden, Vertical, and PVC blinds.',
     icon: 'Layers',
     path: '/services#blinds',
   },
   {
     id: 'window-coverings',
-    name: 'Window Coverings',
-    shortDesc: 'Complete window solutions including custom drapery, sheers, and blackout treatments.',
+    name: 'Custom Drapery',
+    shortDesc: 'Tailored pinch-pleat curtains, architectural sheers, and blackout drapery systems.',
     icon: 'Frame',
     path: '/services#window-coverings',
   },
   {
     id: 'motorized-shading',
     name: 'Smart Motorized Shading',
-    shortDesc: 'Automated blinds and motorized shade systems compatible with smart home and voice controls.',
-    icon: 'Sparkles',
+    shortDesc: 'Remote-controlled & smart home shading powered by Somfy and Tuya motors.',
+    icon: 'Zap',
     path: '/services#motorized-shading',
-  },
-  {
-    id: 'flooring',
-    name: 'Flooring',
-    shortDesc: 'Quality hardwood, laminate, vinyl plank, and carpet tile surfaces sourced for Canadian living.',
-    icon: 'Grid',
-    path: '/services#flooring',
   },
   {
     id: 'measurement',
     name: 'Free Site Measurement',
-    shortDesc: 'Complimentary on-site measurement for accurate quotes and perfect fit every time.',
+    shortDesc: '100% complimentary on-site measurement & consultation across Bangalore.',
     icon: 'Ruler',
     path: '/services#measurement',
   },
   {
     id: 'consultation',
-    name: 'Design Consultation',
-    shortDesc: 'Expert guidance to help you choose products that match your vision and your home.',
+    name: 'Showroom & Design Consultation',
+    shortDesc: 'Visit our Vinayaka Nagar showroom or invite our specialists home with 1m x 1m samples.',
     icon: 'Lightbulb',
     path: '/services#consultation',
   },
@@ -113,51 +142,79 @@ export const canadaServices = [
 
 // Customer journey steps
 export const processSteps = [
-  { step: '01', title: 'Contact Us', description: 'Reach out by phone, email, or our online form to get started.' },
-  { step: '02', title: 'Free Site Measurement', description: 'We visit your home at no charge and take precise measurements of every window and floor area.' },
-  { step: '03', title: 'Understand Your Needs', description: 'We listen carefully to your preferences, lifestyle, and budget to understand exactly what you need.' },
-  { step: '04', title: 'Product Recommendation', description: 'We present a curated selection of products that suit your space perfectly.' },
-  { step: '05', title: 'Confirm Selection', description: 'You review samples, make your final choices, and we confirm the order details.' },
-  { step: '06', title: 'Professional Installation', description: 'Our skilled team installs everything with precision, care, and zero mess.' },
-  { step: '07', title: 'Project Complete', description: 'You enjoy your beautifully transformed home, backed by our 1-year warranty.' },
+  {
+    step: '01',
+    title: 'Reach Out or Visit Showroom',
+    description: 'Call or WhatsApp +91 9731801476, or visit our Vinayaka Nagar showroom in Bangalore (10 AM – 8 PM, Mon–Sun).',
+  },
+  {
+    step: '02',
+    title: 'Free Site Measurement',
+    description: 'Our specialists visit your Bangalore residence or commercial site 100% free of charge for laser-accurate measurements.',
+  },
+  {
+    step: '03',
+    title: 'Sample & Fabric Curation',
+    description: 'Inspect 1m x 1m fabric swatches, Dream Curtains vanes, and blind textures under your room’s natural lighting.',
+  },
+  {
+    step: '04',
+    title: 'Motorization & Custom Quote',
+    description: 'Choose manual operation or Somfy / Tuya smart motorization and receive a tailored architectural quote with zero hidden fees.',
+  },
+  {
+    step: '05',
+    title: 'Custom Manufacturing',
+    description: 'Once confirmed, your window solutions are precision-crafted to bespoke site dimensions within 3–4 days.',
+  },
+  {
+    step: '06',
+    title: 'Precision Installation (₹250)',
+    description: 'Trained technicians complete dust-free installation at a nominal ₹250 charge across Bangalore.',
+  },
+  {
+    step: '07',
+    title: '5–7 Years Peace of Mind',
+    description: 'Enjoy your transformed space backed by our 5 to 7 years warranty on window solutions and 100% satisfaction commitment.',
+  },
 ];
 
-// FAQ for Canada
+// FAQ for Bangalore HQ
 export const faqItems = [
   {
-    q: 'Do you offer a free site measurement?',
-    a: 'Yes — all site measurements are completely complimentary. We visit your home, take precise measurements, and provide a detailed quote at no cost.',
+    q: 'Is site measurement and consultation really free in Bangalore?',
+    a: 'Yes — site measurement and consultation are 100% free for all customers across Bangalore. Our design team visits your home or office with samples, takes exact measurements, and prepares a custom quote with zero obligation.',
   },
   {
-    q: 'What areas do you serve?',
-    a: 'We are based in Saskatoon, Saskatchewan, and serve customers across Canada.',
+    q: 'Why are prices not displayed on the website?',
+    a: 'Every window treatment, Dream Curtain system, and motorized shade is custom manufactured to your exact site dimensions, chosen fabric grade, and motor brand (Somfy or Tuya). Request a custom quote or book a free measurement for an exact tailored estimate.',
   },
   {
-    q: 'How long does installation take?',
-    a: 'Most residential installations are completed within a day. Larger projects may take longer — we will give you a clear timeline upfront.',
+    q: 'What is the installation charge and delivery timeline?',
+    a: 'We offer a fast 3 to 4 days delivery lead time from order confirmation. Professional installation across Bangalore is charged nominally at just ₹250.',
   },
   {
-    q: 'Do you display prices on the website?',
-    a: 'We prefer to provide accurate quotes based on your specific measurements and product choices. Contact us for a free, no-obligation quote.',
+    q: 'What warranty do you provide on window solutions?',
+    a: 'Our window blinds, Dream Curtains, custom drapery hardware, and motorized systems are backed by a comprehensive 5 to 7 years warranty depending on the selected product and motor brand.',
   },
   {
-    q: 'What warranty do you offer?',
-    a: 'All our installations come with a 1-year warranty on workmanship. Product manufacturer warranties may also apply.',
+    q: 'What are Dream Curtains?',
+    a: 'Dream Curtains are our flagship walk-through sheer vertical luxury drape system. They combine the flowing elegance of sheer curtains with the light-control privacy of vertical blinds — allowing 180° light rotation, individual machine-washable vanes, and seamless walk-through convenience without opening the track.',
   },
   {
-    q: 'Can I try blinds in a 3D room before ordering?',
-    a: 'Yes! Our 3D Room Studio lets you visualize different blind styles, wall colours, and flooring surfaces in a virtual room before making any decisions.',
+    q: 'Do you offer smart motorized blinds and curtains?',
+    a: 'Yes! Remote-controlled and smart home motorization is available across all our products using trusted Somfy and Tuya motors. Final pricing depends on your chosen motor brand and window dimensions.',
   },
   {
-    q: 'What payment methods do you accept?',
-    a: 'We accept cash, bank transfer, credit/debit cards, cheque, and EMI options.',
+    q: 'Do you have a physical showroom in Bangalore?',
+    a: "Yes! Visit our physical showroom at 2nd 'C' Cross, Vinayaka Nagar, Bangalore, Karnataka - 560030. We are open Monday to Sunday from 10:00 AM to 8:00 PM.",
   },
   {
-    q: 'Do you offer motorized and automated blinds?',
-    a: 'Yes! We specialize in smart motorized blinds and shades featuring Somfy and rechargeable wire-free motors, complete with remote, app, and voice integration.',
+    q: 'What payment methods do you accept and what is your order policy?',
+    a: 'We accept UPI (GPay / PhonePe / Paytm), Cash, Bank Transfer (NEFT / RTGS / IMPS), and Cheque. Please note our custom architectural order policy: once an order is placed, it is custom manufactured; no return or refund.',
   },
   {
-    q: 'Do you supply flooring as well?',
-    a: 'Absolutely. We supply premium hardwood, laminate, luxury vinyl plank, and modular carpet tile materials sourced to match your space, budget, and lifestyle.',
+    q: 'Can I preview blinds and curtains in 3D before booking a visit?',
+    a: 'Yes! Use our interactive 3D Room Studio to experiment with Roller, Zebra, Honeycomb, Wooden, Vertical, and PVC blinds alongside drapery, wall colours, and lighting in real time.',
   },
 ];

@@ -55,7 +55,7 @@ const FAQSection = () => {
   return (
     <section
       ref={ref}
-      className="py-16 md:py-24 bg-[#0A0908] text-white relative overflow-hidden border-t border-white/10"
+      className="py-16 md:py-24 bg-[#141416] text-white relative overflow-hidden border-t border-white/10"
       aria-label="Frequently asked questions"
     >
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(201,165,90,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(201,165,90,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
@@ -81,7 +81,7 @@ const FAQSection = () => {
           </h2>
           
           <p className="text-white/70 text-base font-sans font-light leading-relaxed">
-            Everything you need to know about working with Brighton Decor Ltd.
+            Everything you need to know about Brighton Decor Private Limited in Bangalore.
           </p>
         </motion.div>
 

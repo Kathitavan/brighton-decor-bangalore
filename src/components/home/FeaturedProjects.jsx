@@ -36,7 +36,7 @@ const FeaturedProjects = () => {
             <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-[#C9A55A]/10 border border-[#C9A55A]/25 mb-4">
               <Sparkles size={14} className="text-[#C9A55A]" />
               <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C9A55A]">
-                Canadian Portfolio
+                Bangalore Portfolio
               </span>
             </div>
 

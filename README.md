@@ -1,93 +1,78 @@
-# Brighton Decor Canada ✦ 3D Architectural Visualizer & Digital Showroom
+# Brighton Decor Private Limited — Bangalore HQ Digital Showroom ✦
 
-> **Developed with Excellence by [Kathiravan.org](https://kathiravan.org)**
-
-An immersive, high-end 3D WebGL digital showroom and web application engineered for **Brighton Decor Ltd** (Saskatoon, Saskatchewan, Canada). Built with **React**, **React Three Fiber**, **Three.js**, **Framer Motion**, and **Tailwind CSS**.
+An ultra-luxurious **Dark Luxury** 3D WebGL digital showroom and architectural web platform built for **Brighton Decor Private Limited** (Bangalore, Karnataka, India). Powered by **React 18**, **Vite**, **React Three Fiber / Three.js**, **Framer Motion**, and **Tailwind CSS**.
 
 ---
 
-## 🌟 Key Highlights & Feature Suite
+## 🏛️ Company Profile (Bangalore HQ)
 
-### 1. 🏢 Photorealistic 3D Architectural Window & Drapery Studio
-- **Procedural S-Fold Drapery Geometry**: Mathematically sculpted vertical S-fold cloth mesh with dynamic vertex gather compression and airflow breeze animations in `useFrame`.
-- **Double Glazing & Architectural Frame**: Custom window casing, quartz sill reflections, and dual-pane insulated glass with realistic `transmission={0.94}` and index of refraction (`ior={1.52}`).
-- **Venetian Blind Slat Physics**: Real-time X-axis slat rotation physics casting dynamic sunlit slat shadows across interior floor surfaces.
-- **Lighting Atmosphere Modes**: Real-time toggle between **Bright Daylight** and **Warm Evening** sun streams.
+- **Legal Entity**: Brighton Decor Private Limited (`Est. 2022`)
+- **Tagline**: *Brightening your home — Defining Your Space*
+- **GSTIN**: `29AAFCL7414BIZO`
+- **Leadership**:
+  - **N Musaib Ahmed** — Founder & Managing Director
+  - **Nisar Ahmed** — Co-Founder & Director
+- **Showroom & Office**: 2nd 'C' Cross, Vinayaka Nagar, Bangalore, Karnataka - 560030, India
+- **Hours**: Monday – Sunday, 10:00 AM – 8:00 PM
+- **Phone / WhatsApp**: `+91 9731801476`
+- **Emails**: `Info@brightondecor.in` | `Musaib@brightondecor.in`
+- **Target Market**: Bangalore, Karnataka & South India
 
-### 2. 🛋️ Interactive 3D Room Studio (`/room-viewer`)
-- **Virtual Room Visualizer**: Customize room presets, blind types, wall tones, flooring materials, and furniture styles in an interactive 3D WebGL environment.
-- **Mobile Responsive Drawer Controls**: Dedicated touch-optimized bottom sheet controls for mobile devices and side inspector drawer for desktop displays.
+---
 
-### 3. 🎨 Multi-Page Visual Identity System (Zero Theme Bleed)
-- **Page-Scoped Theme Architecture**: Each page operates with its own distinct visual theme and atmosphere:
-  - **Home**: Dark Obsidian Luxury (`#0A0908`)
-  - **Services**: Deep Architectural Slate (`#0B0E14`)
-  - **Portfolio**: Gallery Noir Charcoal (`#0F1012`)
-  - **Products**: Warm Sand Dune Showroom (`#F5F0E6`)
-  - **3D Room Studio**: Deep Space WebGL Studio (`#030304`)
-  - **Design Ideas / Blog**: Publisher's Cream Paper (`#FBF9F4`)
-  - **Contact**: Forest Emerald Concierge (`#0A120E`)
-  - **About**: Sandstone Heritage (`#1F1A14`)
-- **Dynamic Route-Aware Header & Footer**: `Navbar.jsx` and `Footer.jsx` automatically adapt frosted glass backgrounds, link contrast, and button variants based on the active URL path.
+## ✨ Key Features & Offerings
 
-### 4. 🎴 Spring-Assisted 3D Perspective Card Tilt Physics
-- **Interactive Product Cards**: Framer Motion `useMotionValue` and `useSpring` tracking cursor coordinates for subtle perspective rotation (clamped to max ±4°).
-- **Specular Sheen Overlay**: Dynamic light beam sweeping across card surfaces on hover.
-- **Material Finish Selector Swatches**: Interactive finish swatches updating product previews in real time.
+### 1. Flagship **Dream Curtains** & Window Collections
+- **Dream Curtains**: Walk-through sheer vertical luxury drape system (*"The Poetry of Sheers with the Privacy of Blinds"*) with 180° light rotation, machine-washable individual vanes, and motorized smart wand/remote control.
+- **Window Blinds**: Roller, Zebra, Honeycomb, Wooden, Vertical, and PVC blinds.
+- **Custom Drapery & Smart Motorization**: Pinch-pleat & S-fold drapery paired with **Somfy** and **Tuya** smart home motors.
+- **Strict Custom Quoting Policy**: No generic online pricing — every product connects directly to **Get Custom Quote** and **Book Free Measurement** workflows.
+
+### 2. 8-Section Distinct Dark Luxury Homepage Palette
+1. **Hero** — *Obsidian & 24K Champagne Gold* (`#0a0a0a` / `#D4AF37`)
+2. **Trust Stats & GST Badge** — *Onyx & Brushed Bronze* (`#121212`, `500+` projects, `GSTIN: 29AAFCL7414BIZO`)
+3. **Flagship Products & Dream Curtains** — *Deep Emerald Tinted Noir* (`#06140f` → `#0b0f12`)
+4. **The 3D Interactive Room Studio** — *Midnight Sapphire & Platinum Gold* (`#080c18` / `#E5D399`)
+5. **Why Brighton Decor & Bangalore Craftsmanship** — *Espresso Luxe & Warm Champagne* (`#120e0b` / `#E8D2A6`)
+6. **The 7-Step Concierge Process** — *Titanium Slate & Amber Gold* (`#0e131b` / `#E0A94E`)
+7. **Verified Bangalore Reviews** — *Charcoal Velvet & Star Gold* (`#141416` / `#F5C451`)
+8. **Showroom, Contact & Bangalore Live Map** — *High-Contrast Noir & Radiant Gold* (`#050506` / `#D4AF37`)
+
+### 3. Interactive 3D Studio & Showroom Experience (`/room-viewer`)
+- Real-time 3D configurator for Roller, Zebra, Honeycomb, Wooden, Vertical, and PVC blinds, custom drapery, walls, flooring, area rugs, and dynamic lighting presets.
+- Shareable configuration URLs and screenshot capture attached directly to consultation inquiries.
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Domain | Technology |
+| Layer | Technologies |
 | :--- | :--- |
-| **Core Framework** | React 18, Vite |
-| **3D Engine** | React Three Fiber (R3F), Three.js, `@react-three/drei` |
-| **Motion & Animation** | Framer Motion |
-| **Styling System** | Tailwind CSS, CSS Modules |
-| **Iconography** | Lucide React |
-| **Color Management** | sRGB Color Space, Modern Tone Mapping |
+| **Framework** | React 18, React Router v6, Vite 4 |
+| **3D & WebGL** | Three.js, `@react-three/fiber`, `@react-three/drei`, `@react-spring/three` |
+| **Animation** | Framer Motion, GSAP, Lenis Smooth Scroll |
+| **Styling** | Tailwind CSS 3, CSS Modules |
+| **Icons** | Lucide React |
 
 ---
 
-## 🚀 Quick Start Guide
-
-### Prerequisites
-- **Node.js**: `v18.0.0` or higher
-- **npm**: `v9.0.0` or higher
-
-### Installation
+## 🚀 Quick Start
 
 ```bash
 # Clone the repository
-git clone https://github.com/Kathitavan/Brighton-Decore.git
-
-# Navigate into the project directory
-cd "Brighton decor"
+git clone https://github.com/Kathitavan/brighton-decor-bangalore.git
+cd brighton-decor-bangalore
 
 # Install dependencies
 npm install
 
-# Start development server
+# Run local development server
 npm run dev
-```
 
-### Production Build
-
-```bash
-# Compile production bundle
+# Build for production
 npm run build
-
-# Preview production build locally
-npm run preview
 ```
 
 ---
 
-## 💻 Developed By
-
-Designed and engineered by **[Kathiravan.org](https://kathiravan.org)** — Creative WebGL Development & Frontend Architecture.
-
----
-
-© 2026 **Brighton Decor Ltd**. All Rights Reserved. Saskatoon, Saskatchewan, Canada.
+© 2026 **Brighton Decor Private Limited**. Vinayaka Nagar, Bangalore, Karnataka - 560030, India.

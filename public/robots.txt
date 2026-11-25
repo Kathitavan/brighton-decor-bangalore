@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brightondecor.co/sitemap.xml
+Sitemap: https://brightondecor.in/sitemap.xml
 
 # Disallow build artifacts
 Disallow: /dist/

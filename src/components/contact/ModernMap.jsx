@@ -1,18 +1,19 @@
 // src/components/contact/ModernMap.jsx
 import React, { useState } from 'react';
 import { MapPin, Navigation, Layers, ExternalLink, ShieldCheck } from 'lucide-react';
+import { company } from '../../config/company';
 
 const ModernMap = () => {
   const [mapType, setMapType] = useState('dark');
 
   const mapUrls = {
-    dark: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454!2d-106.6346!3d52.1332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSaskatoon!5e0!3m2!1sen!2sca!4v1697000000000',
-    satellite: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454!2d-106.6346!3d52.1332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSaskatoon!5e1!3m2!1sen!2sca!4v1697000000000',
+    dark: 'https://maps.google.com/maps?q=Vinayaka%20Nagar%2C%20Bangalore%2C%20Karnataka%20560030&t=&z=15&ie=UTF8&iwloc=&output=embed',
+    satellite:
+      'https://maps.google.com/maps?q=Vinayaka%20Nagar%2C%20Bangalore%2C%20Karnataka%20560030&t=k&z=15&ie=UTF8&iwloc=&output=embed',
   };
 
   return (
     <div className="relative rounded-3xl overflow-hidden border border-[#52B788]/35 shadow-[0_30px_80px_rgba(0,0,0,0.8)] group bg-[#0A120E]">
-      
       {/* Map Control Header */}
       <div className="absolute top-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-[#0A120E]/90 backdrop-blur-xl border border-[#52B788]/30">
         <div className="flex items-center gap-3">
@@ -20,16 +21,21 @@ const ModernMap = () => {
             <MapPin size={18} />
           </div>
           <div>
-            <div className="text-white text-xs font-serif font-bold">2911B Cleveland Ave</div>
+            <div className="text-white text-xs font-serif font-bold">
+              {company.address.street}
+            </div>
             <div className="text-white/70 text-[10px] font-sans flex items-center gap-1.5">
-              <span>Saskatoon, SK</span>
-              <span className="font-mono text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold">S7K 8A9</span>
+              <span>Bangalore, Karnataka</span>
+              <span className="font-mono text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold">
+                {company.address.pincode}
+              </span>
             </div>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
           <button
+            type="button"
             onClick={() => setMapType(mapType === 'dark' ? 'satellite' : 'dark')}
             className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[11px] font-sans transition-all"
           >
@@ -38,7 +44,7 @@ const ModernMap = () => {
           </button>
 
           <a
-            href="https://www.google.com/maps/search/?api=1&query=2911B+Cleveland+Ave%2C+Saskatoon%2C+SK+S7K+8A9"
+            href={company.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#52B788] hover:bg-white text-[#0A120E] text-[11px] font-bold font-sans transition-all shadow-[0_0_18px_rgba(82,183,136,0.4)]"
@@ -52,7 +58,7 @@ const ModernMap = () => {
       {/* Map Frame */}
       <div className="w-full h-[380px] md:h-[480px]">
         <iframe
-          title="Brighton Decor Ltd Interactive Location Map"
+          title="Brighton Decor Private Limited — Vinayaka Nagar, Bangalore Showroom"
           src={mapUrls[mapType]}
           className="w-full h-full border-0 filter grayscale invert contrast-125 opacity-90 transition-all duration-500 group-hover:grayscale-0 group-hover:invert-0 group-hover:opacity-100"
           allowFullScreen=""
@@ -66,15 +72,14 @@ const ModernMap = () => {
         <div className="flex items-center gap-3">
           <ShieldCheck size={18} className="text-[#52B788]" />
           <span className="text-white text-xs font-sans">
-            Free site measurement within <strong className="text-[#52B788]">50km radius of Saskatoon</strong>
+            <strong className="text-[#52B788]">100% Free site measurement</strong> across Bangalore &amp; South India
           </span>
         </div>
         <div className="hidden sm:flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-[#52B788] font-mono font-bold">
           <Navigation size={12} />
-          <span>Active Office</span>
+          <span>Physical Showroom</span>
         </div>
       </div>
-
     </div>
   );
 };

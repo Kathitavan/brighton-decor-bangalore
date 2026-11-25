@@ -168,16 +168,17 @@ const Hero = () => {
   };
 
   const trustStats = [
-    { value: '1,300+', label: 'Canadian Homes Transformed' },
-    { value: '4+ Years', label: 'Saskatoon Craftsmanship' },
-    { value: '100%',   label: 'Tailored Satisfaction' },
-    { value: 'Free',   label: 'In-Home Measurement' },
+    { value: '500+', label: 'Bangalore & South India Projects' },
+    { value: '4+ Years', label: 'Craftsmanship Since 2022' },
+    { value: '5–7 Yrs', label: 'Window Solutions Warranty' },
+    { value: 'Free', label: 'Bangalore Site Measurement' },
   ];
 
   return (
     <section
       ref={heroRef}
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0908] text-white pt-28 pb-20 ${styles.heroContainer}`}
+      id="section-hero"
+      className={`relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a] text-white pt-28 pb-20 ${styles.heroContainer}`}
       aria-label="Hero section"
     >
       {/* 1. Cinematic Background Video Stage */}
@@ -241,11 +242,11 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={rollUpVariants}
-              className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full backdrop-blur-md bg-black/45 border border-[#C9A55A]/35 shadow-lg"
+              className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full backdrop-blur-md bg-black/55 border border-[#D4AF37]/45 shadow-lg"
             >
-              <div className="w-2 h-2 rounded-full bg-[#C9A55A] animate-pulse" />
-              <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C9A55A] font-sans">
-                Saskatoon Flagship · Handcrafted in Canada
+              <div className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+              <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#D4AF37] font-sans">
+                Bangalore HQ · Vinayaka Nagar Showroom · India
               </span>
             </motion.div>
           </div>
@@ -272,7 +273,7 @@ const Hero = () => {
                 initial="hidden"
                 animate="visible"
                 variants={rollUpVariants}
-                className="block italic text-[#C9A55A]"
+                className="block italic text-[#D4AF37]"
               >
                 Your Home.
               </motion.span>
@@ -297,10 +298,9 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={rollUpVariants}
-              className="text-white/90 text-base md:text-lg leading-relaxed font-sans font-light drop-shadow-md bg-black/25 backdrop-blur-xs p-2.5 rounded-lg border border-white/5"
+              className="text-white/90 text-base md:text-lg leading-relaxed font-sans font-light drop-shadow-md bg-black/30 backdrop-blur-xs p-3 rounded-lg border border-[#D4AF37]/15"
             >
-              Custom-engineered window blinds, architectural drapery, and luxury Canadian flooring. 
-              Precision laser measurement, white-glove installation, and enduring beauty.
+              Signature Dream Curtains, precision-crafted window blinds, custom drapery, and Somfy/Tuya smart motorized shading across Bangalore &amp; South India. 100% free measurement, 3–4 days delivery, and 5–7 years warranty.
             </motion.p>
           </div>
 
@@ -316,7 +316,7 @@ const Hero = () => {
               <button
                 id="hero-cta-measurement"
                 onClick={() => navigate('/contact', { state: { type: 'measurement' } })}
-                className="group relative inline-flex items-center justify-center gap-3 bg-[#C9A55A] text-[#0A0908] px-8 py-4 text-[11px] uppercase font-bold tracking-[0.2em] font-sans hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(201,165,90,0.35)] transform hover:-translate-y-0.5 rounded-full"
+                className="group relative inline-flex items-center justify-center gap-3 bg-[#D4AF37] text-[#0a0a0a] px-8 py-4 text-[11px] uppercase font-bold tracking-[0.2em] font-sans hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(212,175,55,0.4)] transform hover:-translate-y-0.5 rounded-full"
               >
                 <Ruler size={15} />
                 <span>Book Free Measurement</span>
@@ -326,9 +326,9 @@ const Hero = () => {
               <button
                 id="hero-cta-3d"
                 onClick={() => navigate('/room-viewer')}
-                className="group relative inline-flex items-center justify-center gap-3 backdrop-blur-xl bg-black/45 border border-white/30 text-white px-8 py-4 text-[11px] uppercase font-bold tracking-[0.2em] font-sans hover:border-[#C9A55A] hover:bg-[#C9A55A]/15 hover:text-[#C9A55A] transition-all duration-300 rounded-full shadow-lg"
+                className="group relative inline-flex items-center justify-center gap-3 backdrop-blur-xl bg-black/45 border border-white/30 text-white px-8 py-4 text-[11px] uppercase font-bold tracking-[0.2em] font-sans hover:border-[#D4AF37] hover:bg-[#D4AF37]/15 hover:text-[#D4AF37] transition-all duration-300 rounded-full shadow-lg"
               >
-                <Sparkles size={14} className="text-[#C9A55A]" />
+                <Sparkles size={14} className="text-[#D4AF37]" />
                 <span>Launch 3D Room Studio</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </button>

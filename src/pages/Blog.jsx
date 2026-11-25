@@ -22,8 +22,8 @@ const Blog = () => {
   return (
     <PageTransition>
       <SEO
-        title="Interior Design Ideas & Window Covering Trends"
-        description="Read expert guides, Canadian design trends, light-control tips, and custom window decor advice from the master artisans at Brighton Decor Ltd."
+        title="Interior Design Ideas, Dream Curtains & Window Trends — Bangalore"
+        description="Read expert guides on Dream Curtains, motorized blinds (Somfy & Tuya), and architectural drapery for Bangalore & South Indian homes by Brighton Decor Private Limited."
       />
       <div className={styles.blogPage}>
         {/* Header */}
@@ -37,7 +37,7 @@ const Blog = () => {
             >
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D96B43]/10 border border-[#D96B43]/25 text-[#D96B43] text-[10px] uppercase font-bold tracking-[0.25em] mb-4">
                 <BookOpen size={13} />
-                <span>Editorial Journal</span>
+                <span>Bangalore Design Journal</span>
               </div>
               <h1
                 className="font-serif text-[#261C14] font-light leading-tight mb-6"
@@ -47,7 +47,7 @@ const Blog = () => {
                 <span className="italic text-[#D96B43]">&amp; Architectural Insights</span>
               </h1>
               <p className="text-[#261C14]/75 text-lg md:text-xl font-sans font-light leading-relaxed">
-                Expert tips, trends, and material guides for Canadian homeowners — from light-control window choices to enduring hardwood finishes.
+                Expert tips, Dream Curtains guides, and smart motorization advice tailored for Bangalore apartments, villas, and South Indian spaces.
               </p>
             </motion.div>
           </div>

@@ -17,8 +17,8 @@ const Testimonials = () => {
   return (
     <PageTransition>
       <SEO
-        title="Client Reviews & Testimonials — 100% Satisfaction Record"
-        description="Read authentic verified reviews from homeowners across Saskatchewan and Canada who trusted Brighton Decor Ltd for custom blinds, drapery, and motorized shading."
+        title="Verified Bangalore Client Reviews — 100% Satisfaction Record"
+        description="Read verified reviews from homeowners across Whitefield, Indiranagar, HSR Layout, and Jayanagar who trusted Brighton Decor Private Limited for Dream Curtains, blinds & motorized shading."
       />
       <div className={styles.testimonialsPage}>
         {/* Header */}
@@ -32,17 +32,17 @@ const Testimonials = () => {
             >
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5B83D]/15 border border-[#F5B83D]/30 text-[#F5B83D] text-[10px] uppercase font-bold tracking-[0.25em] mb-4">
                 <Sparkles size={13} />
-                <span>Verified Client Reviews</span>
+                <span>Verified Bangalore Reviews</span>
               </div>
               <h1
                 className="font-serif text-[#E4EFEA] font-light leading-tight mb-6"
                 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
               >
-                What Our Canadian<br />
-                <span className="italic text-[#F5B83D]">Customers Say</span>
+                What Our Bangalore<br />
+                <span className="italic text-[#F5B83D]">Clients Say</span>
               </h1>
               <p className="text-[#E4EFEA]/75 text-lg md:text-xl font-sans font-light leading-relaxed">
-                We're proud of our 100% customer satisfaction record. Here's what clients have shared about their experience with Brighton Decor.
+                500+ completed projects across Bangalore &amp; South India with a 100% customer satisfaction record and 5–7 years warranty.
               </p>
             </motion.div>
           </div>
@@ -93,7 +93,7 @@ const Testimonials = () => {
               <div className="font-serif text-[#F5B83D] text-6xl font-light mb-2">100%</div>
               <div className="font-serif text-[#E4EFEA] text-2xl mb-3">Customer Satisfaction</div>
               <p className="text-[#E4EFEA]/75 text-sm font-sans font-light leading-relaxed">
-                We're not satisfied until you are. That's not just a tagline — it's how we approach every single installation across Canada.
+                We're not satisfied until you are. That's how we approach every single installation across Bangalore, Karnataka &amp; South India.
               </p>
             </motion.div>
           </div>
@@ -103,10 +103,10 @@ const Testimonials = () => {
         <section className="py-20 px-6 md:px-12 bg-gradient-to-b from-[#12231E] to-[#0B1713] border-t border-[#F5B83D]/20 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="font-serif text-[#E4EFEA] text-3xl md:text-4xl font-light mb-4">
-              Ready to join our satisfied customers?
+              Ready to join our satisfied Bangalore homeowners?
             </h2>
             <p className="text-[#E4EFEA]/75 mb-8 font-sans font-light">
-              Book your free site measurement today across Saskatoon & Canada.
+              Book your 100% free site measurement today anywhere in Bangalore.
             </p>
             <button
               onClick={() => navigate('/contact')}

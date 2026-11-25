@@ -359,7 +359,7 @@ const ProjectModal = ({ project, projectsList = [], isOpen, onClose, onSelectPro
               {/* 7. CONVERSION CTA BANNER */}
               <div className="pt-12 border-t border-white/10 text-center bg-gradient-to-b from-[#171816] to-[#0A0908] p-10 md:p-14 rounded-3xl border border-white/15 shadow-2xl">
                 <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#C9A55A] block font-sans mb-2">
-                  Bespoke Canadian Interiors
+                  Bespoke Bangalore &amp; South India Interiors
                 </span>
                 <h3 className="font-serif text-3xl md:text-4xl text-white mb-3 font-light">
                   Inspired by this space?

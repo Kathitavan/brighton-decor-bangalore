@@ -1,57 +1,79 @@
-// Brighton Decor Ltd — Room Viewer Products
-// Prices removed for Canada client — "Request Quote" CTA used instead.
+// Brighton Decor Private Limited — Bangalore HQ Room Viewer & Flagship Products
+// STRICT NO-PRICE POLICY: All products use "Get Custom Quote" or "Book Free Measurement" CTAs.
+
+export const DREAM_CURTAINS_PRODUCT = {
+  id: 'dream-curtains',
+  name: 'Dream Curtains',
+  category: 'Dream Curtains',
+  tagline: 'The Poetry of Sheers with the Privacy of Blinds.',
+  color: '#F3EFE6',
+  shortDesc:
+    'Walk-through sheer vertical louvers with seamless light transitions. Effortlessly glide through closed curtains without opening them.',
+  materialBadge: 'Walk-Through Sheer Vanes',
+  lightControl: '180° Light Rotation',
+  warranty: '5–7 Years Warranty',
+  motorOptions: 'Somfy / Tuya Smart Wand & Remote',
+  sampleSize: '1m x 1m & Bespoke Site Sizing',
+  features: [
+    'Walk-through fabric vanes',
+    '180° light rotation',
+    'Machine washable individual vanes',
+    'Motorized smart wand or remote control',
+  ],
+  image: '/assets/imgs/decore/living-room-custom-drapery.jpg',
+};
 
 export const BLIND_PRODUCTS = [
-  { 
-    id: 'roller',    
-    name: 'Roller Blinds',      
-    color: '#E8E0D4', 
-    shortDesc: 'Solar screen micro-weave, sleek minimal cassette headbox',
+  {
+    id: 'roller',
+    name: 'Roller Blinds',
+    color: '#E8E0D4',
+    shortDesc: 'Solar screen micro-weave with sleek minimal cassette headbox & Somfy/Tuya motor options',
     materialBadge: 'Solar Screen Weave',
     lightControl: 'Light Filtering & Blackout',
     image: '/assets/imgs/products/roller-blinds.jpg',
   },
-  { 
-    id: 'zebra',     
-    name: 'Zebra Blinds',        
-    color: '#D4CFC8', 
-    shortDesc: 'Dual-layer alternating sheer & room-darkening fabric vanes',
+  {
+    id: 'zebra',
+    name: 'Zebra Blinds',
+    color: '#D4CFC8',
+    shortDesc: 'Dual-layer alternating sheer & room-darkening fabric vanes for instant daylight control',
     materialBadge: 'Dual-Layer Voile',
     lightControl: 'Precision Day/Night',
     image: '/assets/imgs/products/zebra-blinds.jpg',
   },
-  { 
-    id: 'honeycomb', 
-    name: 'Honeycomb Blinds',    
-    color: '#D4C8B0', 
-    shortDesc: 'Cellular hexagonal pleats for superior Canadian climate insulation',
+  {
+    id: 'honeycomb',
+    name: 'Honeycomb Blinds',
+    color: '#D4C8B0',
+    shortDesc: 'Cellular hexagonal pleats engineered for tropical heat rejection & acoustic calm',
     materialBadge: 'Double-Cell Thermal',
-    lightControl: 'Thermal Energy Saver',
+    lightControl: 'Heat & Acoustic Shield',
     image: '/assets/imgs/products/honeycomb-blinds.jpg',
   },
-  { 
-    id: 'wooden',    
-    name: 'Wooden Blinds',  
-    color: '#8B6914', 
-    shortDesc: 'Canadian hardwood horizontal slats with woven decorative ladder tapes',
+  {
+    id: 'wooden',
+    name: 'Wooden Blinds',
+    color: '#8B6914',
+    shortDesc: 'Architectural hardwood horizontal slats with woven decorative ladder tapes',
     materialBadge: 'Hardwood & Tapes',
     lightControl: 'Warm Ambient Grain',
     image: '/assets/imgs/products/wooden-blinds.jpg',
   },
-  { 
-    id: 'vertical',  
-    name: 'Vertical Blinds',     
-    color: '#C8C0B4', 
-    shortDesc: 'Floor-to-ceiling architectural vanes for patio and sliding doors',
+  {
+    id: 'vertical',
+    name: 'Vertical Blinds',
+    color: '#C8C0B4',
+    shortDesc: 'Floor-to-ceiling architectural vanes tailored for expansive balconies & sliding doors',
     materialBadge: 'Architectural Fabric',
     lightControl: 'Wide Angled Control',
     image: '/assets/imgs/products/vertical-blinds.jpg',
   },
-  { 
-    id: 'pvc',       
-    name: 'PVC Faux Wood',          
-    color: '#F0F0F0', 
-    shortDesc: '100% waterproof luxury slats engineered for bathrooms & kitchens',
+  {
+    id: 'pvc',
+    name: 'PVC Blinds',
+    color: '#F0F0F0',
+    shortDesc: '100% waterproof luxury slats engineered for kitchens, utility balconies & bathrooms',
     materialBadge: 'Waterproof Polymer',
     lightControl: 'Moisture Resistant',
     image: '/assets/imgs/products/pvc-blinds.jpg',
@@ -90,6 +112,7 @@ export const roomProducts = {
     { id: 'office',  name: 'Office' },
   ],
   categories: {
+    dreamCurtains: DREAM_CURTAINS_PRODUCT,
     blinds: BLIND_PRODUCTS,
     wallColors: WALL_COLORS,
     flooring: FLOOR_OPTIONS,

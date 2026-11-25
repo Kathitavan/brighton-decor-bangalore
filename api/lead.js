@@ -206,7 +206,7 @@ function buildBusinessEmailHtml({ refId, type, name, email, phone, message, room
       </div>
 
       <div style="background-color: #12100E; padding: 16px 32px; border-top: 1px solid #2B2620; font-size: 11px; color: #78716C; text-align: center;">
-        Brighton Decor Ltd · 2911B Cleveland Ave, Saskatoon, SK S7K 8A9 · +1 (306) 580-6476
+        Brighton Decor Private Limited · 2nd 'C' Cross, Vinayaka Nagar, Bangalore, Karnataka - 560030 · +91 9731801476
       </div>
     </div>
   `;
@@ -218,13 +218,13 @@ function buildCustomerConfirmationHtml({ refId, name, type }) {
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #FAF8F5; color: #2B1F17; border: 1px solid #E7DFC6; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
       <div style="background-color: #2B1F17; padding: 28px 32px; text-align: center;">
         <h1 style="margin: 0; font-size: 22px; font-weight: 700; color: #FAF8F5; letter-spacing: 0.05em; font-family: serif;">BRIGHTON DECOR</h1>
-        <p style="margin: 6px 0 0 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: #B89656;">Saskatoon Concierge &amp; Craftsmanship</p>
+        <p style="margin: 6px 0 0 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: #B89656;">Bangalore Concierge &amp; Craftsmanship</p>
       </div>
 
       <div style="padding: 36px 32px;">
         <p style="font-size: 16px; margin-top: 0; color: #2B1F17;">Dear ${name},</p>
         <p style="font-size: 14px; line-height: 1.7; color: #574B40;">
-          Thank you for reaching out to <strong>Brighton Decor Ltd</strong>. We have received your inquiry and our Saskatoon design specialist has been assigned to your project.
+          Thank you for reaching out to <strong>Brighton Decor Private Limited</strong>. We have received your inquiry and our Bangalore design specialist has been assigned to your project.
         </p>
 
         <div style="background-color: #F1ECE1; border: 1px dashed #B89656; border-radius: 12px; padding: 20px; text-align: center; margin: 28px 0;">
@@ -236,19 +236,19 @@ function buildCustomerConfirmationHtml({ refId, name, type }) {
         <h3 style="font-size: 14px; font-weight: 700; color: #2B1F17; margin: 24px 0 8px 0;">What happens next?</h3>
         <ul style="font-size: 13px; line-height: 1.8; color: #574B40; padding-left: 20px; margin: 0 0 24px 0;">
           <li>Our design concierge will review your selections within <strong>1 business day</strong>.</li>
-          <li>For site measurements, we will contact you to coordinate a precise, zero-cost appointment.</li>
-          <li>For custom quotes, we will prepare detailed material recommendations tailored to your specifications.</li>
+          <li>For site measurements across Bangalore, we will coordinate a 100% free on-site appointment.</li>
+          <li>For custom quotes, we will prepare detailed fabric &amp; motorization (Somfy / Tuya) recommendations tailored to your dimensions.</li>
         </ul>
 
         <div style="border-top: 1px solid #E7DFC6; padding-top: 20px; margin-top: 28px; font-size: 13px; color: #7A6958;">
           <p style="margin: 0 0 4px 0;">Need immediate assistance? Feel free to reach us directly:</p>
-          <p style="margin: 0; font-weight: 600; color: #2B1F17;">📞 +1 (306) 580-6476 &nbsp;|&nbsp; ✉️ Shoieb@brightondecor.co</p>
-          <p style="margin: 4px 0 0 0; font-size: 12px;">Flagship Office: 2911B Cleveland Ave, Saskatoon, SK S7K 8A9</p>
+          <p style="margin: 0; font-weight: 600; color: #2B1F17;">📞 +91 9731801476 &nbsp;|&nbsp; ✉️ Info@brightondecor.in &nbsp;|&nbsp; Sales: Musaib@brightondecor.in</p>
+          <p style="margin: 4px 0 0 0; font-size: 12px;">Showroom &amp; HQ: 2nd 'C' Cross, Vinayaka Nagar, Bangalore, Karnataka - 560030</p>
         </div>
       </div>
 
       <div style="background-color: #F1ECE1; padding: 14px 32px; font-size: 11px; color: #8F8170; text-align: center;">
-        Brighten Your Home · Define Your Space · © ${new Date().getFullYear()} Brighton Decor Ltd.
+        Brightening your home · Defining Your Space · © ${new Date().getFullYear()} Brighton Decor Private Limited.
       </div>
     </div>
   `;
@@ -261,8 +261,8 @@ export default async function handler(req, res) {
   // 1. Cross-Origin (CORS) Configuration
   const origin = req.headers.origin || '';
   const isAllowedOrigin = 
-    origin === 'https://brightondecor.co' ||
-    origin === 'https://www.brightondecor.co' ||
+    origin === 'https://brightondecor.in' ||
+    origin === 'https://www.brightondecor.in' ||
     origin.startsWith('http://localhost:') ||
     origin.startsWith('http://127.0.0.1:') ||
     origin.endsWith('.vercel.app');

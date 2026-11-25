@@ -1,13 +1,14 @@
 // src/pages/Products.jsx
-// Brighton Decor Canada — Products Showroom V3 (Photorealistic 3D Window Studio + 3D Card Physics)
+// Brighton Decor Private Limited (Bangalore HQ) — Products Showroom
+// STRICT NO-PRICE POLICY: All products display "Get Custom Quote" & "Book Free Measurement" CTAs.
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import PageTransition from '../components/common/PageTransition';
 import SEO from '../components/common/SEO';
-import { BLIND_PRODUCTS } from '../data/roomProducts';
+import { BLIND_PRODUCTS, DREAM_CURTAINS_PRODUCT } from '../data/roomProducts';
 import WindowCurtainShowcase from '../components/products/WindowCurtainShowcase';
-import { ArrowRight, Tag, Sparkles, Box, Eye, Layers, Check } from 'lucide-react';
+import { ArrowRight, Tag, Sparkles, Box, CheckCircle2, ShieldCheck, Clock, Ruler } from 'lucide-react';
 import styles from '../styles/pages/products.module.css';
 
 const blindImages = {
@@ -19,130 +20,92 @@ const blindImages = {
   pvc: '/assets/imgs/products/pvc-blinds.jpg',
 };
 
+const dreamCurtainsCollection = [
+  {
+    id: 'dream-curtains',
+    name: 'Dream Curtains — Sheer Vertical Drape',
+    category: 'Dream Curtains',
+    desc: 'The Poetry of Sheers with the Privacy of Blinds. Walk-through sheer vertical louvers with 180° light rotation & machine-washable individual vanes.',
+    image: '/assets/imgs/decore/living-room-custom-drapery.jpg',
+    swatches: [
+      { name: 'Pearl Ivory', hex: '#F6F2EA' },
+      { name: 'Champagne Silk', hex: '#DECBA4' },
+      { name: 'Warm Sand', hex: '#CBB89D' },
+      { name: 'Charcoal Mist', hex: '#4B4E54' },
+    ],
+  },
+  {
+    id: 'dream-curtains-motorized',
+    name: 'Dream Curtains — Motorized Smart Track',
+    category: 'Dream Curtains',
+    desc: 'Walk-through luxury sheer vanes paired with Somfy or Tuya motorized smart wand & remote control for effortless balcony transitions.',
+    image: '/assets/imgs/decore/french-patio-door-drapery.jpg',
+    swatches: [
+      { name: 'Alabaster Voile', hex: '#FAF8F5' },
+      { name: 'Dune Gold', hex: '#D4AF37' },
+      { name: 'Dove Grey', hex: '#9BA0A6' },
+      { name: 'Espresso Sheer', hex: '#3D312A' },
+    ],
+  },
+];
+
 const customDecorProducts = [
-  { 
-    id: 'pinch-pleat-drapery', 
-    name: 'Pinch-Pleat Tailored Drapes', 
-    category: 'Drapery', 
-    desc: 'Bespoke floor-to-ceiling drapery with crisp architectural pinch pleats and tailored blackout lining.', 
+  {
+    id: 'pinch-pleat-drapery',
+    name: 'Pinch-Pleat Tailored Drapes',
+    category: 'Drapery',
+    desc: 'Bespoke floor-to-ceiling drapery with crisp architectural pinch pleats, acoustic blackout lining, and 1m x 1m sample verification.',
     image: '/assets/imgs/decore/french-patio-door-drapery.jpg',
     swatches: [
       { name: 'Slate Grey', hex: '#686B73' },
       { name: 'Ivory Linen', hex: '#F4EFEA' },
       { name: 'Oatmeal Tweed', hex: '#D6C7B2' },
       { name: 'Charcoal Weave', hex: '#2C2E35' },
-    ]
+    ],
   },
-  { 
-    id: 'grand-sheer-suite', 
-    name: 'Bespoke Sheer & Drape Suite', 
-    category: 'Drapery', 
-    desc: 'Grand living room ceiling-recessed drapery with light-diffusing sheer accents for panoramic windows.', 
+  {
+    id: 'grand-sheer-suite',
+    name: 'Bespoke Sheer & Drape Suite',
+    category: 'Drapery',
+    desc: 'Grand living room ceiling-recessed drapery with light-diffusing sheer accents tailored for Bangalore apartments & villas.',
     image: '/assets/imgs/decore/living-room-custom-drapery.jpg',
     swatches: [
       { name: 'Midnight Slate', hex: '#3B4856' },
       { name: 'Soft Pearl', hex: '#EBEAE6' },
       { name: 'Mist Blue', hex: '#7C8A99' },
       { name: 'Champagne Silk', hex: '#D8C6A5' },
-    ]
+    ],
   },
-  { 
-    id: 'motorized-zebra-shades', 
-    name: 'Smart Motorized Zebra Blinds', 
-    category: 'Motorized', 
-    desc: 'Motorized dual-transition sheer and solid bands with multi-window remote synchronisation.', 
+  {
+    id: 'motorized-zebra-shades',
+    name: 'Smart Motorized Zebra Blinds',
+    category: 'Motorized',
+    desc: 'Remote & app-controlled dual-transition shades powered by Somfy or Tuya motors with 5–7 years warranty.',
     image: '/assets/imgs/decore/motorized-zebra-blinds.jpg',
     swatches: [
       { name: 'Graphite Dual', hex: '#4B4D52' },
       { name: 'Chalk White', hex: '#F7F7F7' },
       { name: 'Espresso Bronze', hex: '#362D26' },
       { name: 'Sandstone Grey', hex: '#C2B6A6' },
-    ]
+    ],
   },
-  { 
-    id: 'woven-textured-shades', 
-    name: 'Natural Woven Texture Shades', 
-    category: 'Drapery', 
-    desc: 'Artisanal organic bamboo and woven reed roller shades delivering rich organic textures.', 
+  {
+    id: 'woven-textured-shades',
+    name: 'Natural Woven Bamboo Shades',
+    category: 'Drapery',
+    desc: 'Artisanal organic bamboo and woven reed roller shades delivering warm filtered light for South Indian dining & living spaces.',
     image: '/assets/imgs/decore/natural-woven-dining-shades.jpg',
     swatches: [
       { name: 'Amber Woven', hex: '#C68E48' },
       { name: 'Natural Reed', hex: '#E0BA7B' },
       { name: 'Dark Walnut', hex: '#4F3824' },
       { name: 'Bleached Jute', hex: '#DFD4BE' },
-    ]
-  },
-];
-
-const flooringProducts = [
-  {
-    id: 'hardwood-flooring',
-    name: 'Luxury Hardwood Flooring',
-    category: 'Flooring',
-    desc: 'Solid & engineered Canadian timber planks precision-milled for authentic grain warmth and enduring longevity.',
-    image: '/assets/imgs/products/hardwood-flooring.jpg',
-    swatches: [
-      { name: 'Natural Oak', hex: '#C8A882' },
-      { name: 'Dark Walnut', hex: '#3E2A18' },
-      { name: 'Bleached Ash', hex: '#E4DDD4' },
-      { name: 'Smoked Chestnut', hex: '#5C4033' },
-    ],
-  },
-  {
-    id: 'laminate-flooring',
-    name: 'High-Density Laminate',
-    category: 'Flooring',
-    desc: 'Scratch-resistant, click-lock laminate engineered to replicate natural wood with moisture-defying durability.',
-    image: '/assets/imgs/products/laminate-flooring.jpg',
-    swatches: [
-      { name: 'Nordic Pine', hex: '#D8C7B0' },
-      { name: 'Alpine Birch', hex: '#F0E8DC' },
-      { name: 'Urban Grey', hex: '#8B8C89' },
-      { name: 'Honey Maple', hex: '#B8860B' },
-    ],
-  },
-  {
-    id: 'vinyl-plank-flooring',
-    name: 'Luxury Vinyl Plank (LVP)',
-    category: 'Flooring',
-    desc: '100% waterproof rigid-core vinyl plank flooring designed for busy family living, kitchens, and basements.',
-    image: '/assets/imgs/products/vinyl-plank.jpg',
-    swatches: [
-      { name: 'Limed Oak', hex: '#D1C2A5' },
-      { name: 'Charcoal Slate', hex: '#373F47' },
-      { name: 'Driftwood', hex: '#9E9484' },
-      { name: 'Espresso Plank', hex: '#2B231F' },
-    ],
-  },
-  {
-    id: 'engineered-chevron-flooring',
-    name: 'Engineered Chevron Parquet',
-    category: 'Flooring',
-    desc: 'Artisanal chevron and herringbone pattern engineered hardwood delivering architectural distinction and timeless prestige.',
-    image: '/assets/imgs/products/engineered-hardwood.jpg',
-    swatches: [
-      { name: 'Honey Oak', hex: '#B8860B' },
-      { name: 'Smoked Walnut', hex: '#4B3621' },
-      { name: 'Raw Natural', hex: '#D7C4A5' },
-      { name: 'Ebony Stain', hex: '#222222' },
-    ],
-  },
-  {
-    id: 'carpet-tile-collection',
-    name: 'Modular Carpet Tile',
-    category: 'Flooring',
-    desc: 'Commercial-grade acoustic carpet tile systems offering plush underfoot insulation and effortless replacement.',
-    image: '/assets/imgs/products/carpet-tile.jpg',
-    swatches: [
-      { name: 'Steel Tweed', hex: '#58595B' },
-      { name: 'Warm Charcoal', hex: '#2D2926' },
-      { name: 'Desert Sand', hex: '#D2B48C' },
-      { name: 'Navy Rib', hex: '#1B2A4A' },
     ],
   },
 ];
 
 const allProducts = [
+  ...dreamCurtainsCollection,
   ...BLIND_PRODUCTS.map((b) => ({
     id: b.id,
     name: b.name,
@@ -153,22 +116,19 @@ const allProducts = [
       { name: 'Linen White', hex: '#FAF8F5' },
       { name: 'Warm Sand', hex: '#EAE3D2' },
       { name: 'Artisan Oak', hex: '#4A3520' },
-      { name: 'Slate Gray', hex: '#7A8288' }
-    ]
+      { name: 'Slate Gray', hex: '#7A8288' },
+    ],
   })),
   ...customDecorProducts,
-  ...flooringProducts,
 ];
 
-const categories = ['All', 'Blinds', 'Drapery', 'Motorized', 'Flooring'];
+const categories = ['All', 'Dream Curtains', 'Blinds', 'Drapery', 'Motorized'];
 
-// Product Card Component with Subtle 3D Tilt Physics (Max ±4°), Sheen Beam & Swatches
 const ProductCard3D = ({ product, index, navigate }) => {
   const cardRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [selectedSwatch, setSelectedSwatch] = useState(product.swatches[0]);
 
-  // Framer Motion Cursor Coordinates & Physics Springs (Max ±4° for architectural subtlety)
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
 
@@ -178,10 +138,8 @@ const ProductCard3D = ({ product, index, navigate }) => {
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    mouseX.set(x);
-    mouseY.set(y);
+    mouseX.set((e.clientX - rect.left) / rect.width);
+    mouseY.set((e.clientY - rect.top) / rect.height);
   };
 
   const handleMouseLeave = () => {
@@ -206,11 +164,10 @@ const ProductCard3D = ({ product, index, navigate }) => {
       }}
       className={`${styles.productCard3D} group flex flex-col justify-between select-none transform-gpu`}
     >
-      {/* Product Image Stage */}
       <div className="aspect-[4/3] overflow-hidden bg-[#FAF8F5] relative">
         <img
           src={product.image}
-          alt={`${product.name} — Brighton Decor Ltd`}
+          alt={`${product.name} — Brighton Decor Bangalore`}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
           loading="lazy"
           onError={(e) => {
@@ -218,23 +175,20 @@ const ProductCard3D = ({ product, index, navigate }) => {
           }}
         />
 
-        {/* Dynamic Specular Sheen Beam Overlay */}
         <div
           className={styles.sheenBeam}
           style={{
             opacity: isHovered ? 1 : 0,
-            background: `linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%)`,
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%)',
           }}
         />
 
-        {/* Category Pill Tag */}
         <div className="absolute top-3 left-3 z-20">
           <span className="text-[9px] uppercase font-bold tracking-[0.2em] font-sans text-[#2B1F17] bg-white/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#2B1F17]/10 shadow-sm">
             {product.category}
           </span>
         </div>
 
-        {/* Active Swatch Badge Overlay */}
         <div className="absolute bottom-3 left-3 z-20">
           <span className="text-[9px] font-sans font-semibold text-[#2B1F17] bg-[#FAF8F5]/90 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-[#B89656]/30 flex items-center gap-1 shadow-sm">
             <span className="w-2 h-2 rounded-full border border-black/20" style={{ backgroundColor: selectedSwatch.hex }} />
@@ -243,17 +197,15 @@ const ProductCard3D = ({ product, index, navigate }) => {
         </div>
       </div>
 
-      {/* Product Details Body */}
       <div className="p-6 flex flex-col justify-between flex-grow bg-white">
         <div>
           <h3 className="font-serif text-[#2B1F17] text-xl font-medium mb-2 group-hover:text-[#B89656] transition-colors leading-snug">
             {product.name}
           </h3>
-          <p className="line-clamp-2 text-[#2B1F17]/70 text-xs font-sans font-light leading-relaxed mb-4">
+          <p className="line-clamp-3 text-[#2B1F17]/70 text-xs font-sans font-light leading-relaxed mb-4">
             {product.desc}
           </p>
 
-          {/* Interactive Material Swatches Bar */}
           <div className="flex items-center gap-2 mb-6 pt-2 border-t border-[#2B1F17]/10">
             <span className="text-[9px] uppercase font-bold tracking-widest text-[#2B1F17]/40 font-sans">
               Finish:
@@ -276,30 +228,46 @@ const ProductCard3D = ({ product, index, navigate }) => {
           </div>
         </div>
 
-        {/* Action Buttons */}
         <div className="flex items-center gap-2 pt-2">
           <button
-            onClick={() => navigate('/contact', {
-              state: {
-                type: 'quote',
-                productName: product.name,
-                productId: product.id,
-                category: product.category,
-                finish: selectedSwatch?.name,
-              },
-            })}
+            onClick={() =>
+              navigate('/contact', {
+                state: {
+                  type: 'quote',
+                  productName: product.name,
+                  productId: product.id,
+                  category: product.category,
+                  finish: selectedSwatch?.name,
+                },
+              })
+            }
             className={`${styles.primaryBtn} flex-1 text-[10px] uppercase font-bold tracking-widest font-sans py-3 rounded-xl transition-all flex items-center justify-center gap-1.5`}
           >
-            <span>Request Quote</span>
+            <span>Get Custom Quote</span>
           </button>
 
-          {product.category === 'Blinds' && (
+          {product.category === 'Blinds' ? (
             <button
               onClick={() => navigate('/room-viewer', { state: { preselect: product.id } })}
               className={`${styles.try3dBtn} flex-1 text-[10px] uppercase font-bold tracking-widest font-sans border border-[#2B1F17]/20 text-[#2B1F17] py-3 rounded-xl hover:border-[#B89656] hover:text-[#B89656] transition-all bg-[#FAF8F5] flex items-center justify-center gap-1.5 shadow-[0_0_12px_rgba(184,150,86,0.25)]`}
             >
               <Box size={13} className="text-[#B89656] animate-pulse" />
               <span>Try in 3D</span>
+            </button>
+          ) : (
+            <button
+              onClick={() =>
+                navigate('/contact', {
+                  state: {
+                    type: 'measurement',
+                    serviceName: product.name,
+                  },
+                })
+              }
+              className="flex-1 text-[10px] uppercase font-bold tracking-widest font-sans border border-[#2B1F17]/20 text-[#2B1F17] py-3 rounded-xl hover:border-[#B89656] hover:text-[#B89656] transition-all bg-[#FAF8F5] flex items-center justify-center gap-1.5"
+            >
+              <Ruler size={12} className="text-[#B89656]" />
+              <span>Book Measure</span>
             </button>
           )}
         </div>
@@ -314,36 +282,31 @@ const Products = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
-  const filtered = activeCategory === 'All'
-    ? allProducts
-    : allProducts.filter((p) => p.category === activeCategory);
+  const filtered =
+    activeCategory === 'All'
+      ? allProducts
+      : allProducts.filter((p) => p.category === activeCategory);
 
   return (
     <PageTransition>
       <SEO
-        title="Custom Window Blinds, Drapery & Luxury Flooring Collection"
-        description="Shop custom roller blinds, zebra shades, honeycomb thermal blinds, tailored drapery, and luxury flooring surfaces across Saskatoon and Canada."
+        title="Dream Curtains, Luxury Window Blinds & Custom Drapery Collection"
+        description="Explore flagship Dream Curtains, custom Roller, Zebra, Honeycomb, Wooden, Vertical & PVC blinds, and Somfy/Tuya motorized drapery in Bangalore. 5–7 years warranty & free measurement."
         schema={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
-          'name': 'Brighton Decor Window Blinds, Drapery & Flooring Collection',
-          'itemListElement': allProducts.map((p, idx) => ({
+          name: 'Brighton Decor Bangalore — Dream Curtains, Blinds & Drapery',
+          itemListElement: allProducts.map((p, idx) => ({
             '@type': 'Product',
-            'position': idx + 1,
-            'name': p.name,
-            'description': p.desc,
-            'category': p.category,
-            'image': `https://brightondecor.co${p.image}`,
-            'offers': {
-              '@type': 'Offer',
-              'priceCurrency': 'CAD',
-              'availability': 'https://schema.org/InStock',
-            }
-          }))
+            position: idx + 1,
+            name: p.name,
+            description: p.desc,
+            category: p.category,
+            image: `https://brightondecor.in${p.image}`,
+          })),
         }}
       />
       <div className={`${styles.productsPage} ${styles.gridPattern}`}>
-        
         {/* 1. Refined Architectural Header */}
         <section className="relative pt-36 pb-12 px-6 md:px-12 border-b border-[#2B1F17]/10">
           <div className="max-w-7xl mx-auto">
@@ -355,19 +318,90 @@ const Products = () => {
             >
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/80 border border-[#2B1F17]/15 text-[#2B1F17] text-[10px] uppercase font-bold tracking-[0.25em] mb-4 shadow-sm backdrop-blur-md">
                 <Sparkles size={14} className="text-[#B89656]" />
-                <span>3D Architectural Showroom Collection</span>
+                <span>Bangalore Flagship Showroom Collection</span>
               </div>
               <h1
                 className="font-serif text-[#2B1F17] font-light leading-tight mb-4"
                 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
               >
-                Window Blinds, Drapery &amp;<br />
-                <span className="italic text-[#B89656]">Flooring Collection</span>
+                Dream Curtains, Blinds &amp;<br />
+                <span className="italic text-[#B89656]">Smart Motorized Drapery</span>
               </h1>
               <p className="text-[#2B1F17]/75 text-lg md:text-xl font-sans font-light leading-relaxed">
-                Curated Canadian window materials, bespoke drapery, and luxury flooring surfaces. Contact us for a free site measurement and personalized quote.
+                Custom-tailored architectural window solutions crafted for Bangalore &amp; South India. Every product includes 100% free site measurement, Somfy or Tuya motorization options, 3–4 day delivery, and 5–7 years warranty.
               </p>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Flagship Dream Curtains Spotlight */}
+        <section className="px-6 md:px-12 max-w-7xl mx-auto pt-10">
+          <div className="rounded-3xl bg-[#0A1812] text-[#F5F2EA] border border-[#D4AF37]/40 p-8 md:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] uppercase font-bold tracking-[0.25em]">
+                <Sparkles size={13} />
+                <span>Flagship Innovation · Must-See</span>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl font-light leading-tight">
+                {DREAM_CURTAINS_PRODUCT.name}
+                <span className="block italic text-[#D4AF37] text-xl md:text-2xl mt-1">
+                  &ldquo;{DREAM_CURTAINS_PRODUCT.tagline}&rdquo;
+                </span>
+              </h2>
+              <p className="text-white/80 text-sm md:text-base font-sans font-light leading-relaxed">
+                {DREAM_CURTAINS_PRODUCT.shortDesc}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                {DREAM_CURTAINS_PRODUCT.features.map((feat) => (
+                  <div key={feat} className="flex items-center gap-2.5 text-xs text-white/90 font-sans">
+                    <CheckCircle2 size={15} className="text-[#D4AF37] shrink-0" />
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-3 pt-3">
+                <button
+                  onClick={() =>
+                    navigate('/contact', {
+                      state: { type: 'quote', productName: 'Dream Curtains', category: 'Dream Curtains' },
+                    })
+                  }
+                  className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#0A0908] px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all shadow-lg"
+                >
+                  <span>Get Custom Quote</span>
+                  <ArrowRight size={14} />
+                </button>
+                <button
+                  onClick={() =>
+                    navigate('/contact', {
+                      state: { type: 'measurement', serviceName: 'Dream Curtains Home Demo' },
+                    })
+                  }
+                  className="inline-flex items-center gap-2 border border-[#D4AF37]/50 text-[#D4AF37] px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#D4AF37]/10 transition-all"
+                >
+                  <Ruler size={14} />
+                  <span>Book Free Measurement</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-[#D4AF37]/40 relative">
+                <img
+                  src={DREAM_CURTAINS_PRODUCT.image}
+                  alt="Dream Curtains — Walk-Through Sheer Vertical Drapery"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-3 left-3 right-3 bg-black/75 backdrop-blur-md border border-[#D4AF37]/30 rounded-xl px-4 py-2.5 flex items-center justify-between text-[11px] font-sans">
+                  <span className="flex items-center gap-1.5 text-[#D4AF37] font-semibold">
+                    <ShieldCheck size={14} /> 5–7 Years Warranty
+                  </span>
+                  <span className="flex items-center gap-1.5 text-white/80">
+                    <Clock size={13} className="text-[#D4AF37]" /> 3–4 Days Delivery
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -379,8 +413,7 @@ const Products = () => {
         {/* 3. Products Catalog & Filters */}
         <section ref={ref} className="py-16 md:py-24 px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
-            
-            {/* Pricing Policy Banner */}
+            {/* Custom Quoting Policy Banner (NO PRICES DISPLAYED) */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -388,18 +421,20 @@ const Products = () => {
             >
               <Tag size={20} className="text-[#B89656] mt-0.5 flex-shrink-0" />
               <p className="text-[#2B1F17]/85 text-sm font-sans font-light leading-relaxed">
-                <strong className="font-semibold text-[#2B1F17]">Custom Measurement Quoting Policy:</strong>{' '}
-                Pricing depends on your exact window dimensions, material specifications, and installation requirements. 
-                We offer a <strong className="text-[#B89656] font-semibold">free site measurement across Saskatoon & Canada</strong> to provide an accurate, transparent quote.
+                <strong className="font-semibold text-[#2B1F17]">Bespoke Architectural Quoting Policy:</strong>{' '}
+                We do not display generic product prices online. Every quote is custom calculated from your exact window measurements (1m x 1m samples &amp; bespoke site sizing) and your chosen motorization brand (Somfy or Tuya).{' '}
+                <strong className="text-[#B89656] font-semibold">
+                  100% Free site measurement in Bangalore · 3–4 days delivery · 5–7 years warranty.
+                </strong>
               </p>
             </motion.div>
 
-            {/* Category Filter Pills with Framer Motion layoutId Indicator */}
+            {/* Category Filter Pills */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
-              className="flex items-center gap-3 mb-12"
+              className="flex flex-wrap items-center gap-3 mb-12"
             >
               {categories.map((cat) => {
                 const isActive = activeCategory === cat;
@@ -422,7 +457,7 @@ const Products = () => {
               })}
             </motion.div>
 
-            {/* Product Cards Grid with 3D Hover Physics */}
+            {/* Product Cards Grid */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCategory}
@@ -449,26 +484,27 @@ const Products = () => {
         <section className="py-20 px-6 md:px-12 bg-[#2B1F17] text-[#F5F0E6] text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="font-serif text-[#F5F0E6] text-3xl md:text-4xl font-light mb-4">
-              Can't find what you're looking for?
+              Need Custom Site Sizing or Somfy/Tuya Motorization?
             </h2>
             <p className="text-[#F5F0E6]/75 mb-8 text-base font-sans font-light">
-              We supply custom fabrications. Reach out to our design team to explore bespoke specifications for your space.
+              Visit our Vinayaka Nagar showroom in Bangalore or book a 100% free on-site measurement with 1m x 1m samples.
             </p>
             <button
-              onClick={() => navigate('/contact', {
-                state: {
-                  type: 'team',
-                  message: 'Inquiry from Products catalog: Talk to Our Team about custom fabrications.'
-                }
-              })}
+              onClick={() =>
+                navigate('/contact', {
+                  state: {
+                    type: 'measurement',
+                    message: 'Requesting free site measurement & custom quote from Products catalog.',
+                  },
+                })
+              }
               className="group inline-flex items-center gap-3 bg-[#B89656] text-[#2B1F17] px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-bold font-sans hover:bg-white transition-all shadow-xl"
             >
-              <span>Talk to Our Team</span>
+              <span>Book Free Measurement</span>
               <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </section>
-
       </div>
     </PageTransition>
   );

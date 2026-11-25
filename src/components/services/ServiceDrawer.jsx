@@ -109,13 +109,13 @@ const ServiceDrawer = ({ service, isOpen, onClose }) => {
                 </div>
               )}
 
-              {/* Saskatoon Assurance */}
+              {/* Bangalore Assurance */}
               <div className="p-5 rounded-2xl bg-[#C9A55A]/10 border border-[#C9A55A]/30 flex items-start gap-4">
                 <ShieldCheck size={24} className="text-[#C9A55A] shrink-0 mt-0.5" />
                 <div className="text-xs font-sans">
-                  <strong className="text-white font-bold block mb-1">Brighton Decor Workmanship Guarantee</strong>
+                  <strong className="text-white font-bold block mb-1">Brighton Decor Bangalore Assurance</strong>
                   <span className="text-white/70 leading-relaxed font-light">
-                    All custom window blinds, drapery, and luxury flooring surfaces across Saskatoon & area come backed by our 1-Year Workmanship Guarantee.
+                    Every custom blind, Dream Curtain, and drapery system includes 100% free measurement, 3–4 days delivery, ₹250 nominal installation, and 5–7 years warranty.
                   </span>
                 </div>
               </div>
@@ -149,13 +149,13 @@ const ServiceDrawer = ({ service, isOpen, onClose }) => {
                       productName: service.name,
                       productId: service.id,
                       category: service.category || 'Service Inquiry',
-                      message: `Price quote inquiry for: ${service.name}.`,
+                      message: `Custom architectural quote inquiry for: ${service.name}.`,
                     },
                   });
                 }}
                 className="w-full sm:w-1/2 flex items-center justify-center gap-3 border border-white/20 bg-white/5 text-white px-6 py-4 rounded-full text-xs font-bold uppercase tracking-widest font-sans hover:border-[#C9A55A] hover:text-[#C9A55A] transition-all"
               >
-                <span>Request Quote</span>
+                <span>Get Custom Quote</span>
                 <ArrowRight size={15} />
               </button>
             </div>
